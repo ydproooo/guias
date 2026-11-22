@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><title>Guía de Joa</title><style>
+@page{size:A4;margin:16mm 15mm 16mm}
+:root{--rosa:#E9B8C1;--rosa-osc:#B9707F;--tinta:#2B2426;--gris:#6E6466;--crema:#FBF6F3}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--tinta);font-size:10.5pt;line-height:1.5}
+h1{font-family:Georgia,serif;font-weight:400;font-size:34pt;line-height:1.05;margin:0 0 5mm}
+h2.sec{font-family:Georgia,serif;font-weight:400;font-size:22pt;margin:0 0 4mm;page-break-before:always}
+h2.pz{font-family:Georgia,serif;font-weight:400;font-size:17pt;line-height:1.2;margin:0 0 2mm;padding-top:3mm;border-top:2px solid var(--rosa-osc)}
+article{page-break-before:always}
+article h2{font-family:Georgia,serif;font-weight:400;font-size:13.5pt;margin:6mm 0 1.5mm;color:var(--rosa-osc)}
+article h3{font-size:11.5pt;margin:5mm 0 1mm}
+h2,h3{page-break-after:avoid}
+p{margin:1.5mm 0}ul,ol{margin:1.5mm 0;padding-left:6mm}li{margin:.8mm 0}
+.kicker{font-size:9pt;letter-spacing:.18em;text-transform:uppercase;color:var(--rosa-osc);font-weight:600}
+.lead{font-size:12pt;color:var(--gris);max-width:150mm}
+.portada{height:250mm;display:flex;flex-direction:column;justify-content:center}
+.portada .v{margin-top:10mm;font-size:9.5pt;color:var(--gris)}
+.caja{background:#F4DCE1;border-radius:3mm;padding:4mm 5mm;margin:4mm 0;page-break-inside:avoid}
+.caja b{color:var(--tinta)}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-size:9.5pt}
+th,td{border-top:1px solid #E7DAD6;padding:1.8mm 2mm;text-align:left;vertical-align:top}
+th{font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-osc);border-top:0}
+tr{page-break-inside:avoid}
+blockquote{margin:2.5mm 0;padding:2.5mm 4mm;border-left:3px solid var(--rosa);background:var(--crema);page-break-inside:avoid}
+blockquote p{margin:.8mm 0}
+.dir{color:var(--rosa-osc);font-size:9pt;font-weight:600}
+code{font-family:inherit;background:var(--crema);padding:0 1mm;border-radius:1mm}
+.dia{margin:5mm 0;page-break-inside:avoid}
+.dh{display:flex;gap:4mm;align-items:center}
+.dh .n{font-family:Georgia,serif;font-size:26pt;color:var(--rosa-osc);line-height:1;flex:0 0 9mm}
+.dh b{display:block;font-size:12pt}.dh i{font-style:normal;color:var(--gris);font-size:9.5pt}
+.chk td.bx{width:8mm}.chk td.bx span{display:block;width:4.5mm;height:4.5mm;border:1.5px solid var(--rosa-osc);border-radius:1.2mm;margin-top:.5mm}
+.chk td.t{width:18mm;color:var(--gris);white-space:nowrap;text-align:right}
+.fch td:first-child{width:24mm;white-space:nowrap;color:var(--gris)}.fch td:last-child{width:30mm;font-weight:600;color:var(--rosa-osc)}
+.idx td:first-child{width:14mm;color:var(--rosa-osc);font-weight:700}
+
+:root{--rosa:#E9B8C1;--rosa-osc:#B9707F;--tinta:#2B2426;--gris:#6E6466;--crema:#FBF6F3;--papel:#fff;--raya:#E7DAD6;--suave:#F4DCE1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--rosa:#7d4a55;--rosa-osc:#E9A9B6;--tinta:#F3ECEA;--gris:#B9AEB0;--crema:#1d191a;--papel:#262122;--raya:#3a3234;--suave:#3a2a2e}}
+:root[data-theme="dark"]{--rosa:#7d4a55;--rosa-osc:#E9A9B6;--tinta:#F3ECEA;--gris:#B9AEB0;--crema:#1d191a;--papel:#262122;--raya:#3a3234;--suave:#3a2a2e}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--crema);font-size:16px;line-height:1.55;padding:0 16px 80px;max-width:760px;margin:0 auto;-webkit-text-size-adjust:100%}
+h1{font-size:38px}h2.sec{font-size:26px;margin:44px 0 10px;page-break-before:auto}
+.portada{height:auto;padding:36px 0 8px;display:block}.lead{font-size:17px;max-width:none}
+nav{position:sticky;top:0;z-index:5;background:var(--crema);margin:0 -16px;padding:8px 16px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--raya)}
+nav a{flex:0 0 auto;text-decoration:none;color:var(--tinta);background:var(--papel);border:1px solid var(--raya);border-radius:999px;padding:7px 13px;font-size:14px}
+.prog{font-size:14px;color:var(--gris);margin:14px 0 0}.prog b{color:var(--rosa-osc)}
+.barra{height:6px;background:var(--raya);border-radius:3px;margin-top:6px;overflow:hidden}.barra i{display:block;height:100%;width:0;background:var(--rosa-osc);transition:width .3s}
+.caja{background:var(--suave);border-radius:12px;padding:14px 16px;margin:14px 0}
+table{font-size:14.5px}th,td{border-top:1px solid var(--raya);padding:9px 8px}
+blockquote{background:var(--papel);border-left:3px solid var(--rosa-osc);padding:10px 14px;margin:10px 0}
+code{background:var(--papel)}
+.chk tr{cursor:pointer}.chk td.bx{width:36px}.chk td.t{width:64px}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:24px;height:24px;border:2px solid var(--rosa-osc);border-radius:7px;margin:0;vertical-align:middle;cursor:pointer;background:var(--papel);flex:0 0 auto}
+input[type=checkbox]:checked{background:var(--rosa-osc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+tr.ok td:nth-child(2){text-decoration:line-through;color:var(--gris)}
+.dia{margin:22px 0}.dh .n{font-size:34px;flex:0 0 34px}.dh b{font-size:17px}.dh i{font-size:14px}
+.ir{display:inline-block;margin-left:6px;color:var(--rosa-osc);font-size:13px;white-space:nowrap}
+article{background:var(--papel);border:1px solid var(--raya);border-radius:14px;margin:12px 0;page-break-before:auto}
+article>details>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;gap:10px;align-items:center}
+article>details>summary::-webkit-details-marker{display:none}
+article>details>summary::after{content:"+";margin-left:auto;font-size:24px;color:var(--rosa-osc);line-height:1}
+article>details[open]>summary::after{content:"–"}
+article h2.pz{border:0;padding:0;margin:0;font-size:18px}
+article.hecho h2.pz{color:var(--gris)}
+.cuerpo{padding:0 16px 16px}
+.est{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 14px}
+.est label{display:flex;gap:8px;align-items:center;font-size:14px;border:1px solid var(--raya);border-radius:999px;padding:6px 12px 6px 7px;cursor:pointer}
+.est input{width:20px;height:20px;border-radius:50%}
+.tw{overflow-x:auto}
+@media (max-width:640px){.tw thead{display:none}.tw tr{display:block;padding:10px 0;border-top:1px solid var(--raya)}.tw td{display:block;border:0;padding:2px 0}
+.tw td[data-l]::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-osc);font-weight:700;margin-top:6px}
+.tw td:empty{display:none}}
+.nota{font-size:13px;color:var(--gris);margin-top:28px}
+</style><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="noindex,nofollow" name="robots"/></head><body><div class="portada"><div class="kicker">Simple 2027 · Para Joa</div><h1>Tu guía de grabación</h1><p class="lead">Todo lo que te toca a vos, en un solo lugar: qué grabar cada día, los guiones completos y lo que necesito que me confirmés.</p><p class="v">Versión 1 · 22 de noviembre de 2026. Lo que marqués se guarda en este celular.</p><p class="prog">Llevás <b id="pn"></b> marcados</p><div class="barra"><i id="pb"></i></div></div><nav><a href="#s1">Confirmar</a><a href="#s2">Grabación</a><a href="#s3">Fechas</a><a href="#s4">Clases</a><a href="#s5">Reels</a><a href="#s6">Lo nuevo</a></nav><h2 class="sec">Cómo leer los guiones</h2><div class="caja"><b>Texto normal:</b> se dice tal cual, palabra por palabra.<br/><b><i>Texto en cursiva:</i></b> es la idea. La decís con tus palabras.<br/><b><span class="dir">[DEMO] [PANTALLA] [Título]</span>:</b> algo que hay que mostrar o grabar además de hablar.<br/><b>⚠️:</b> algo que solo vos podés confirmar. Si no es verdad, se cambia el guion, no la verdad.</div><div class="caja"><b>Tres reglas que no cambian:</b><br/>1. El bebé no sale en ningún video ni foto.<br/>2. Nada de números de ingresos, ni testimonios que no sean reales y con permiso escrito.<br/>3. Nada se publica ni se envía sin tu aprobación.</div><h2 class="sec" id="s1" style="page-break-before:auto;margin-top:8mm">1 · Lo que necesito que me confirmés</h2><table class="chk"><tr><td class="bx"><input type="checkbox"/></td><td>Que de verdad grabás sin aro de luz, sin trípode y sin micrófono externo, y que editás en el celular (para R1, R2 y K1).</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Cuánto tiempo te toma de verdad editar un reel.</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Si los subtítulos automáticos de CapCut son gratis en tu cuenta (clase 6).</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Tu historia real para el correo A2 (3 a 5 frases: la primera vez que te viste en video) y una frase tuya para el correo C2.</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Preguntas reales que te han hecho, para el correo B2 y el carrusel K2.</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Cuántos años llevás frente a cámara (para la página de venta).</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Las horas de los cuatro en vivos y de las tres sesiones de Zoom del VIP.</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>El nombre del curso: «Simple: grabate y editá desde tu celular».</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>La garantía: «Si en los primeros 7 días después de pagar sentís que no es para vos, me escribís y te devuelvo tu dinero».</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>El PDF «Plan de contenido de enero» (te lo mando aparte).</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Todo lo que en los guiones está marcado con ⚠️.</td></tr></table><h2 class="sec" id="s2">2 · Tus días de grabación</h2><p class="lead">Están en el orden en que hay que entregarlos. El día 4 lo hacés sola, en el celular, cuando te quede bien.</p><div class="dia"><div class="dh"><span class="n">1</span><div><b>Día de grabación 1</b><i>La clase gratis y los tres primeros reels · antes del viernes 20 de noviembre · unas dos horas</i></div></div><table class="chk"><tr><td class="bx"><input type="checkbox"/></td><td>La clase gratis, con las tres demostraciones ❌/✅ <a class="ir" href="#c-00">ver guion →</a></td><td class="t">45 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R1 · El método, con grabación de pantalla de una edición real <a class="ir" href="#r-R1">ver guion →</a></td><td class="t">25 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R2 · No necesitás equipo (los objetos sobre la mesa) <a class="ir" href="#r-R2">ver guion →</a></td><td class="t">20 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R3 · El truco de periodista, en el set del podcast si se puede <a class="ir" href="#r-R3">ver guion →</a></td><td class="t">20 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Un final alterno de 5 segundos para R1, R2 y R3: «El link está en mi perfil» (para TikTok y YouTube) <a class="ir" href="#r-X1">ver guion →</a></td><td class="t">5 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Una foto tuya para la página: vertical, medio cuerpo, fondo claro</td><td class="t">5 min</td></tr></table></div><div class="dia"><div class="dh"><span class="n">2</span><div><b>Día de grabación 2</b><i>Las cuatro primeras clases y el anuncio · antes del viernes 27 de noviembre · unas dos horas</i></div></div><table class="chk"><tr><td class="bx"><input type="checkbox"/></td><td>Clase 1 · El miedo a la cámara <a class="ir" href="#c-01">ver guion →</a></td><td class="t">30 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 2 · Tu set, con un recorrido corto por la casa <a class="ir" href="#c-02">ver guion →</a></td><td class="t">35 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 3 · Hablarle a la cámara, en el set del podcast <a class="ir" href="#c-03">ver guion →</a></td><td class="t">35 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 4 · Guion en tres líneas (escribís en las notas, en tiempo real) <a class="ir" href="#c-04">ver guion →</a></td><td class="t">25 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R4 · Una sola grabación con dos finales: GRABAR y LISTA <a class="ir" href="#r-R4">ver guion →</a></td><td class="t">20 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Fotos para K1: vos junto a la ventana, el celular sobre los libros, la pantalla de edición <a class="ir" href="#r-K1">ver guion →</a></td><td class="t">10 min</td></tr></table></div><div class="dia"><div class="dh"><span class="n">4</span><div><b>Día de grabación 4</b><i>Grabaciones de pantalla de la edición: sola, en el celular, a la hora que te quede bien · antes del miércoles 2 de diciembre · unas dos horas</i></div></div><table class="chk"><tr><td class="bx"><input type="checkbox"/></td><td>Clase 5 · Cortar: grabación de pantalla editando un reel real, explicando con tu voz <a class="ir" href="#c-05">ver guion →</a></td><td class="t">30 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 6 · Subtítulos y texto: seguís con el mismo reel <a class="ir" href="#c-06">ver guion →</a></td><td class="t">25 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 7 · Música, portada y exportar: terminás el mismo reel <a class="ir" href="#c-07">ver guion →</a></td><td class="t">25 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R6 · Grabación de pantalla del antes y después, sacada de la clase 5 <a class="ir" href="#r-R6">ver guion →</a></td><td class="t">10 min</td></tr></table></div><div class="dia"><div class="dh"><span class="n">3</span><div><b>Día de grabación 3</b><i>El reel completo, la última clase y el día de apertura · antes del viernes 4 de diciembre · unas dos horas</i></div></div><table class="chk"><tr><td class="bx"><input type="checkbox"/></td><td>Clase 8 · Un reel de principio a fin, con reloj. Una sola toma larga <a class="ir" href="#c-08">ver guion →</a></td><td class="t">45 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase 9 · Grabar con un bebé <a class="ir" href="#c-09">ver guion →</a></td><td class="t">25 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Entrada y cierre frente a cámara para las clases 5, 6 y 7 (medio minuto cada una) <a class="ir" href="#c-05">ver guion →</a></td><td class="t">15 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>R5 · El gran día. Tres tomas del inicio <a class="ir" href="#r-R5">ver guion →</a></td><td class="t">20 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Tomas de apoyo para la semana de venta: manos editando, libros y celular, ventana, café</td><td class="t">10 min</td></tr><tr><td class="bx"><input type="checkbox"/></td><td>Clase avanzada VIP · Tus primeras marcas <a class="ir" href="#c-VIP">ver guion →</a></td><td class="t">35 min</td></tr></table></div><h2 class="sec" id="s3">3 · Qué se publica y cuándo</h2><p class="lead">La palabra de la derecha es la que la gente comenta o te escribe. En la primera hora después de cada reel, contestá los comentarios vos misma.</p><table class="fch"><tr><td>lun 23 nov</td><td>R1 · El método</td><td>GRABAR</td></tr><tr><td>mar 24 nov</td><td>Publicación 1 en el grupo de Facebook</td><td>link</td></tr><tr><td>mié 25 nov</td><td>R2 · No necesitás equipo</td><td>GRABAR</td></tr><tr><td>jue 26 nov</td><td>En vivo 1 · Preguntame lo que quieras</td><td>LIVE</td></tr><tr><td>vie 27 nov</td><td>R3 · El truco de periodista</td><td>GRABAR</td></tr><tr><td>lun 30 nov</td><td>R4-a · Para las que son nuevas aquí</td><td>GRABAR</td></tr><tr><td>mié 2 dic</td><td>R4 · Estoy creando algo… abre el 7</td><td>LISTA</td></tr><tr><td>jue 3 dic</td><td>Sorteo (mañana) y En vivo 2</td><td>LISTA</td></tr><tr><td>vie 4 dic</td><td>K1 · Todas dicen que necesitás equipo</td><td>LISTA</td></tr><tr><td>dom 6 dic</td><td>En vivo 3 · Clase gratis en vivo, y las ganadoras del sorteo</td><td>LISTA</td></tr><tr><td>lun 7 dic</td><td>Abre para la lista (por correo, sin reel)</td><td>VIP</td></tr><tr><td>mar 8 dic</td><td>R5 · ¡Hoy es el día!</td><td>CURSO</td></tr><tr><td>mié 9 dic</td><td>K2 · Antes de decidir, leé esto</td><td>CURSO · DUDA</td></tr><tr><td>jue 10 dic</td><td>11:59 p.m. termina el precio de lista</td><td>CURSO</td></tr><tr><td>vie 11 dic</td><td>R6 · Adentro del curso</td><td>CURSO</td></tr><tr><td>sáb 12 dic</td><td>En vivo 4 · Preguntas sobre el curso</td><td>CURSO</td></tr><tr><td>dom 13 dic</td><td>R7 · Últimas horas. Cierra a las 11:59 p.m.</td><td>CURSO</td></tr></table><h2 class="sec" id="s4">4 · Las clases</h2><p class="lead">La clase gratis, las nueve del curso y la clase avanzada del VIP. Cada una empieza en una página nueva.</p><article id="c-00"><details><summary><h2 class="pz">00 · Clase gratis: "Cómo grabarte con el celular y verte natural"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>5 min · junto a una ventana · palabra clave GRABAR · se entrega por la página de la clase gratis</strong><br/> <strong>[ ]</strong> = indicación de grabación o edición · <em>cursiva</em> = idea que decís con tus palabras · texto normal = palabra por palabra</p>
+<hr/>
+<h3>0:00 · Apertura</h3>
+<p>Si te ves rara cuando te grabás… no sos vos. Es que nadie nos enseñó.<br/>
+Yo soy periodista, y aun así, las primeras veces que me grabé con el celular, me vi rarísima. ⚠️ (solo si es verdad)<br/>
+En cinco minutos te enseño tres cosas que cambian todo. Y al final te dejo una tarea chiquita.</p>
+<h3>0:30 · 1. La luz</h3>
+<p><span class="dir">[Título: <strong>1 · La luz</strong>]</span><br/>
+Lo primero: la luz. Y no necesitás comprar nada.</p>
+<ul>
+<li><em>Ponete de frente a una ventana. La luz te tiene que pegar en la cara, no en la espalda.</em></li>
+<li><em>Si la ventana está detrás tuyo, la cámara ve una silueta oscura.</em></li>
+</ul>
+<p><span class="dir">[DEMO: misma frase dos veces. Toma A: de espaldas a la ventana. Toma B: de frente. Pantalla dividida, "❌ / ✅"]</span></p>
+<ul>
+<li><em>Mejor de día. Si hay sol directo y te encandila, cerrá un poquito la cortina.</em></li>
+</ul>
+<p>La ventana es tu aro de luz. Gratis.</p>
+<h3>1:30 · 2. El celular a la altura de tus ojos</h3>
+<p><span class="dir">[Título: <strong>2 · Altura</strong>]</span><br/>
+Segundo: dónde ponés el celular.</p>
+<ul>
+<li><em>A la altura de tus ojos. Ni desde abajo (papada, techo), ni desde muy arriba.</em></li>
+<li><em>Sin trípode: libros, una caja, una repisa.</em> <span class="dir">[DEMO: ella apilando libros]</span></li>
+<li><em>Tus ojos más o menos en el tercio de arriba de la pantalla. No en el centro.</em></li>
+<li><em>Si podés, usá la cámara de atrás: se ve mejor. Si te pone nerviosa no verte, usá la de adelante, está bien.</em></li>
+</ul>
+<p><span class="dir">[DEMO: toma desde abajo ❌ vs. altura de ojos ✅]</span></p>
+<h3>2:30 · 3. Hablale a una sola persona</h3>
+<p><span class="dir">[Título: <strong>3 · Una persona</strong>]</span><br/>
+Y la tercera es la más importante. Esto lo aprendí entrevistando gente.<br/>
+Cuando pensás que le estás hablando a "la gente", te ponés tiesa. Te sale voz de presentadora.</p>
+<ul>
+<li><em>Pensá en una amiga. Una sola. Y contale a ella.</em></li>
+<li><em>Mirá el lente, no la pantalla. El lente es el puntito negro. Ahí están los ojos de tu amiga.</em></li>
+<li><em>Si te equivocás, no pasa nada. Respirás y lo decís otra vez.</em></li>
+</ul>
+<p><span class="dir">[DEMO: ella mirando la pantalla ❌ vs. mirando el lente ✅]</span></p>
+<h3>3:45 · La tarea</h3>
+<p><span class="dir">[Título: <strong>Tu tarea</strong>]</span><br/>
+Ahora te toca a vos. Grabá quince segundos. Contá quién sos y qué te gustaría contar en redes.<br/>
+No lo tenés que publicar. Solo grabalo. Ventana, altura, una persona.<br/>
+Y si querés, mandámelo por DM. Me encantaría verlo. ⚠️ (solo si Joa puede responder)</p>
+<h3>4:30 · Puente al curso</h3>
+<p>Esto es la parte de grabar. Pero falta editar, escribir lo que vas a decir, y hacerlo con poquito tiempo.<br/>
+El 7 de diciembre abro un curso cortito donde te enseño todo eso. Ya estás en la lista, así que te aviso primero, con precio especial.<br/>
+Un abrazo. Nos vemos pronto.</p></div></details></article><article id="c-01"><details><summary><h2 class="pz">Clase 1 · Perderle el miedo a la cámara</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>6–8 min · sofá o un rincón de la casa · meta: que se grabe hoy, no «cuando esté lista»</strong></p>
+<h3>Apertura</h3>
+<p>Bienvenida. Si estás aquí, es porque algo te frena a grabarte. Y te quiero decir algo antes de empezar: eso que sentís es normal. Demasiado normal.</p>
+<h3>1. Por qué nos vemos raras</h3>
+<ul>
+<li><em>No estamos acostumbradas a vernos. Nos vemos en el espejo (al revés) y en fotos, no hablando.</em></li>
+<li><em>La primera vez que escuchás tu voz grabada, no te gusta. Le pasa a todo el mundo. Es porque normalmente te escuchás desde adentro.</em></li>
+<li><em>No es que te veás mal. Es que te ves nueva.</em></li>
+</ul>
+<p>Pregunta: ¿cuántas veces grabaste algo, lo viste, y lo borraste? Yo también.</p>
+<h3>2. La pena no se quita antes de grabar</h3>
+<p>La pena no se quita antes de grabar. Se quita grabando.</p>
+<ul>
+<li><em>No vas a esperar a sentirte lista. Vas a grabar, y con cada video, un poquito menos de pena.</em></li>
+<li><em>Su propia historia corta: la primera vez que se grabó o que habló frente a cámara.</em> ⚠️ (que Joa cuente una real)</li>
+</ul>
+<h3>3. Lo que de verdad le importa a quien te ve</h3>
+<ul>
+<li><em>A la gente no le importa que te veás perfecta. Le importa entender lo que decís y sentir que sos real.</em></li>
+<li><em>Un video imperfecto publicado le sirve a alguien. Un video perfecto en tu galería no le sirve a nadie.</em></li>
+</ul>
+<p>¿Perfecto? No. ¿Hecho? Sí.</p>
+<h3>4. El ejercicio de los 15 segundos (todos los días, una semana)</h3>
+<p><span class="dir">[Título en pantalla: <strong>15 segundos · 7 días</strong>]</span></p>
+<ul>
+<li><em>Cada día, 15 segundos. Sin publicar.</em></li>
+<li><em>Día 1: quién sos. Día 2: qué desayunaste y por qué. Día 3: algo que te dio risa. Y así.</em></li>
+<li><em>No borres ninguno. Al día 7 mirá el día 1 y el día 7, uno al lado del otro.</em></li>
+</ul>
+<p><span class="dir">[DEMO: Joa grabando sus propios 15 segundos, sin cortar]</span></p>
+<h3>Cierre</h3>
+<p>No tenés que creerte que podés. Solo tenés que grabar el día uno. En la próxima clase armamos tu set con lo que ya tenés en tu casa. Nos vemos ahí.</p></div></details></article><article id="c-02"><details><summary><h2 class="pz">Clase 2 · Tu set con lo que ya tenés</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>8–10 min · junto a una ventana, con demostraciones · meta: un rincón fijo para grabar en casa, sin comprar nada</strong></p>
+<h3>Apertura</h3>
+<p>Está muy normalizado pensar que para grabarte necesitás aro de luz, cámara y micrófono. Y no. Hoy armamos tu set con lo que ya tenés.</p>
+<h3>1. Encontrá tu ventana</h3>
+<ul>
+<li><em>Caminá por tu casa con el celular en modo cámara y buscá dónde se te ve mejor la cara.</em></li>
+<li><em>Luz de frente o un poquito de lado. Nunca detrás.</em></li>
+<li><em>Mejor horario: cuando no hay sol directo en esa ventana. Anotá a qué hora es tu "hora buena".</em></li>
+</ul>
+<p><span class="dir">[DEMO: Joa recorriendo 2–3 lugares de su casa, eligiendo uno]</span></p>
+<h3>2. Altura y distancia</h3>
+<ul>
+<li><em>Celular a la altura de los ojos: libros, caja, repisa, o un trípode barato si querés (no es obligatorio).</em></li>
+<li><em>Distancia: que se vea desde el pecho hacia arriba. Ni muy cerca (deforma la cara) ni muy lejos.</em></li>
+<li><em>Ojos en el tercio de arriba. Activá la cuadrícula de la cámara para guiarte.</em> <span class="dir">[DEMO: activar cuadrícula en ajustes]</span></li>
+<li><em>Vertical, siempre. 9:16.</em></li>
+</ul>
+<h3>3. Qué se ve detrás</h3>
+<ul>
+<li><em>El fondo cuenta una historia. Una planta, una repisa, una pared lisa: todo sirve.</em></li>
+<li><em>Quitá lo que distrae: ropa colgada, desorden, una puerta abierta.</em></li>
+<li><em>Separate un paso de la pared. Te da profundidad.</em></li>
+</ul>
+<p><span class="dir">[DEMO: mismo encuadre antes y después de ordenar 3 cosas]</span></p>
+<h3>4. El sonido (lo que más se olvida)</h3>
+<p>El sonido importa más que la imagen. Un video un poco oscuro se aguanta. Uno que no se entiende, no.</p>
+<ul>
+<li><em>Grabá en un cuarto con cosas: cortinas, sillones, cama. Las paredes vacías hacen eco.</em></li>
+<li><em>Apagá el abanico, el aire acondicionado, la tele.</em></li>
+<li><em>Acercá el celular: el micrófono del celular está abajo.</em></li>
+<li><em>Micrófono: opcional. Si algún día comprás uno, un micrófono de solapa sencillo.</em> (sin marcas ni links, salvo afiliado real y declarado)</li>
+</ul>
+<p><span class="dir">[DEMO: frase con abanico encendido ❌ vs. apagado ✅]</span></p>
+<h3>5. Limpiá el lente</h3>
+<p>Esto parece tonto y cambia todo: limpiá el lente con tu camisa antes de cada video.</p>
+<h3>Tarea</h3>
+<p>Armá tu rincón. Tomale una foto. Y grabá tus 15 segundos ahí.</p>
+<h3>Cierre</h3>
+<p>Ya tenés luz, altura, fondo y sonido. En la próxima clase, lo más importante: cómo hablarle a la cámara. Y ahí te cuento lo que aprendí como periodista.</p></div></details></article><article id="c-03"><details><summary><h2 class="pz">Clase 3 · Hablarle a la cámara como periodista</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>8–10 min · set del podcast · el corazón del curso: tu autoridad como periodista</strong><br/> ⛔ Sin nombres de entrevistados políticos y sin clips sin permiso.</p>
+<h3>Apertura</h3>
+<p>He entrevistado a mucha gente frente a cámara. ⚠️ (confirmar) Y aprendí que casi nadie se ve natural en la primera respuesta. Hoy te enseño lo que hacemos los periodistas para que eso cambie.</p>
+<h3>1. Una sola persona</h3>
+<ul>
+<li><em>No le hablés a "la gente", ni a "mis seguidores". Hablale a una amiga.</em></li>
+<li><em>Ponele nombre. Antes de grabar decí en tu mente: "esto se lo cuento a María".</em></li>
+<li><em>Cambia la voz, cambia la cara, cambia todo.</em></li>
+</ul>
+<h3>2. El lente es un ojo</h3>
+<ul>
+<li><em>Mirá el lente, no tu cara en la pantalla.</em></li>
+<li><em>Truco: pegá un sticker o un papelito con una carita al lado del lente.</em></li>
+<li><em>Está bien mirar para un lado cuando pensás. Eso es natural. Lo importante es volver al lente.</em></li>
+</ul>
+<p><span class="dir">[DEMO: pantalla vs. lente, pantalla dividida]</span></p>
+<h3>3. La primera toma es para calentar</h3>
+<ul>
+<li><em>En entrevistas, la gente se relaja en la segunda respuesta, cuando se les olvida la cámara.</em> ⚠️ (en sus palabras)</li>
+<li><em>Así que grabá la primera para calentar. La segunda es la buena.</em></li>
+<li><em>Y si te equivocás a la mitad: pausa, respirás, y decís la frase entera otra vez. Después se corta.</em></li>
+</ul>
+<h3>4. Empezá por lo importante</h3>
+<p>En periodismo lo más importante va primero. En redes, igual.</p>
+<ul>
+<li><em>Nada de "hola, ¿cómo están?, hoy les quiero contar…". Empezá directo con lo que importa.</em></li>
+<li><em>Ejemplo malo: "Hola chicas, hoy les vengo a hablar de la luz…". Ejemplo bueno: "Si te grabás de espaldas a la ventana, te ves oscura."</em></li>
+</ul>
+<h3>5. Voz y ritmo</h3>
+<ul>
+<li><em>Hablá un poquito más alto y con un poquito más de energía que en la vida normal. En cámara se pierde un poquito de energía.</em></li>
+<li><em>Pausas: están bien. Después se cortan.</em></li>
+<li><em>Sonreí con los ojos al empezar. Cambia el tono de todo.</em></li>
+</ul>
+<h3>6. Manos y cuerpo</h3>
+<ul>
+<li><em>Usá tus manos. Si las escondés, te ves tiesa.</em></li>
+<li><em>Hombros sueltos. Antes de grabar, sacudite.</em> <span class="dir">[DEMO: Joa sacudiéndose, riéndose]</span></li>
+</ul>
+<h3>Tarea</h3>
+<p>Grabá dos tomas del mismo mensaje de 30 segundos. Mirá cuál es la buena. (Casi siempre es la segunda.)</p>
+<h3>Cierre</h3>
+<p>Ya sabés cómo hablarle a la cámara. Pero ¿qué decís? En la próxima clase escribimos tu guion en tres líneas.</p></div></details></article><article id="c-04"><details><summary><h2 class="pz">Clase 4 · Tu guion en 3 líneas</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>6–8 min · mesa y pantalla del celular (app de notas) · meta: un guion para un reel en 5 minutos</strong></p>
+<h3>Apertura</h3>
+<p>No hace falta escribir un guion largo. Y tampoco improvisar todo. Hoy te enseño mi forma: tres líneas.</p>
+<h3>Las 3 líneas</h3>
+<p><span class="dir">[Título: <strong>Gancho · Lo importante · Cierre</strong>]</span><br/>
+1. <strong>Gancho:</strong> <em>la primera frase. Lo que hace que alguien deje de pasar el dedo. Algo que la persona reconozca: un problema, una pregunta, algo que "está normalizado".</em><br/>
+2. <strong>Lo importante:</strong> <em>una sola idea. Un consejo, una historia, un paso. Si tenés tres ideas, son tres videos.</em><br/>
+3. <strong>Cierre:</strong> <em>qué querés que haga la persona. Guardar, comentar, mandárselo a alguien, o simplemente un abrazo.</em><br/>
+<span class="dir">[DEMO: Joa escribiendo las 3 líneas en notas del celular, en vivo]</span></p>
+<h3>Ejemplo en vivo</h3>
+<ul>
+<li>Gancho: "Si te grabás de espaldas a la ventana, te ves oscura."</li>
+<li>Lo importante: "Ponete de frente. La ventana es tu aro de luz."</li>
+<li>Cierre: "Guardalo para la próxima vez que grabes."</li>
+</ul>
+<h3>Escribí como hablás</h3>
+<ul>
+<li><em>No lo escribas como un texto del colegio. Escribilo como se lo dirías a tu amiga por audio de WhatsApp.</em></li>
+<li><em>Leelo en voz alta. Si te trabás, cambialo.</em></li>
+<li><em>No lo memorices palabra por palabra. Memorizá las tres ideas y decilo con tus palabras.</em></li>
+</ul>
+<h3>De dónde sacar ideas</h3>
+<ul>
+<li><em>Lo que te preguntan por DM.</em></li>
+<li><em>Lo que vos buscabas cuando empezaste.</em></li>
+<li><em>Algo que todo el mundo cree y vos sabés que no es así.</em></li>
+<li><em>Algo que te pasó esta semana.</em></li>
+<li><em>En el bonus tenés 20 ganchos para completar.</em></li>
+</ul>
+<h3>Tarea</h3>
+<p>Escribí tres guiones de tres líneas. Ya tenés tres videos.</p>
+<h3>Cierre</h3>
+<p>Ya grabaste, ya sabés qué decir. En las próximas tres clases lo editamos, paso a paso. Y vas a ver que es más fácil de lo que pensás.</p></div></details></article><article id="c-05"><details><summary><h2 class="pz">Clase 5 · Editar 1: cortar</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>10–12 min · casi toda la clase es grabación de pantalla del celular, con tu cara al inicio y al cierre · meta: un video limpio, sin silencios y sin errores</strong><br/> ✅ <strong>La app: CapCut.</strong> La grabación de pantalla es en tu app, y los nombres de los botones son los que te aparecen a vos.<br/> ⚠️ La edición que se muestra es de un reel tuyo, real. El mismo reel sigue en las clases 6 y 7.</p>
+<h3>Apertura</h3>
+<p>Editar no es ser editora de cine. Para un reel simple son tres cosas: cortar, ponerle letras y dejarlo listo. Hoy hacemos la primera, que es la más importante. Y lo hago con un video mío de verdad, en CapCut, que es la app que yo uso. Si usás otra, los pasos son los mismos.</p>
+<h3>1. Importar y ordenar</h3>
+<ul>
+<li><em>Abrí la app, nuevo proyecto, elegí tu toma buena (la segunda, ¿verdad?).</em></li>
+<li><em>Formato vertical 9:16.</em></li>
+<li><em>Si grabaste en varios pedazos, ponelos en orden antes de cortar nada.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: importar, elegir 9:16]</span></p>
+<h3>2. Cortar el principio y el final</h3>
+<p><span class="dir">[Título: <strong>1 · Las puntas</strong>]</span></p>
+<ul>
+<li><em>El principio: cuando le das a grabar y te acomodás. Fuera.</em></li>
+<li><em>El final: cuando estirás la mano para parar. Fuera.</em></li>
+<li><em>Tu video tiene que empezar con tu primera palabra. Ni medio segundo antes.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: recortar las dos puntas, en tiempo real]</span></p>
+<h3>3. Cortar los silencios</h3>
+<p><span class="dir">[Título: <strong>2 · Los silencios</strong>]</span></p>
+<ul>
+<li><em>Reproducí el video y parate en cada pausa larga. Dividí antes y después, y borrá el pedazo.</em></li>
+<li><em>Las pausas cortitas para respirar se quedan. Si las quitás todas, suena a robot.</em></li>
+<li><em>Joa muestra dos o tres cortes seguidos, despacio.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: dividir clip, borrar pedazo, tres veces]</span></p>
+<h3>4. Cortar los errores y las repeticiones</h3>
+<p><span class="dir">[Título: <strong>3 · Lo que sobra</strong>]</span></p>
+<ul>
+<li><em>Si dijiste una frase dos veces, dejá la que salió mejor. Casi siempre es la segunda.</em></li>
+<li><em>Los "eh", los "o sea" que no dicen nada: fuera.</em></li>
+<li><em>Regla: si dudás si cortarlo, cortalo.</em></li>
+</ul>
+<p><span class="dir">[DEMO: ❌ el video sin cortar, 10 segundos · ✅ el mismo pedazo ya cortado]</span></p>
+<h3>5. Que el corte no brinque</h3>
+<p><span class="dir">[Título: <strong>4 · El truco del acercamiento</strong>]</span></p>
+<ul>
+<li><em>Cuando cortás, a veces se nota un brinco. Es normal.</em></li>
+<li><em>Truco: en un pedazo sí y en otro no, acercá un poquito la imagen. Así el corte parece a propósito.</em></li>
+<li><em>Solo un poquito. Que no maree.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: agrandar un clip un poco, comparar]</span></p>
+<h3>6. Revisalo sin sonido y con sonido</h3>
+<ul>
+<li><em>Sin sonido: ¿se ve que pasa algo todo el tiempo?</em></li>
+<li><em>Con sonido: ¿se entiende todo? ¿Alguna palabra quedó cortada?</em></li>
+<li><em>Si quedó cortada una palabra, devolvé un poquito el corte.</em></li>
+</ul>
+<h3>Cierre</h3>
+<p>Las puntas, los silencios, lo que sobra. Con solo eso tu video ya se ve diferente. En la próxima clase le ponemos las letras: subtítulos y el texto de arriba.</p>
+<h3>Tarea</h3>
+<p>Cortá el video que grabaste en la clase 4. Solo cortar. Nada más.</p></div></details></article><article id="c-06"><details><summary><h2 class="pz">Clase 6 · Editar 2: subtítulos y texto</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>8–10 min · grabación de pantalla, con tu cara al inicio y al cierre · meta: que el video se entienda sin sonido</strong><br/> ⚠️ Seguís con el mismo reel de la clase 5, en CapCut.<br/> ⚠️ Revisá en tu cuenta si los subtítulos automáticos están en la versión gratis de CapCut. Si son de pago, lo decís y mostrás también los subtítulos automáticos de Instagram.</p>
+<h3>Apertura</h3>
+<p>Mucha gente ve los reels sin sonido. En el bus, en el trabajo, con el bebé dormido al lado. Si tu video no tiene letras, esa gente se va. Hoy le ponemos letras al tuyo.</p>
+<h3>1. Subtítulos automáticos</h3>
+<p><span class="dir">[Título: <strong>1 · Subtítulos</strong>]</span></p>
+<ul>
+<li><em>Casi todas las apps los hacen solas. Buscá "subtítulos" o "captions".</em></li>
+<li><em>Esperá a que termine y leelos todos. Siempre se equivoca en alguna palabra, sobre todo con nombres y con palabras ticas.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: generar subtítulos, corregir una palabra]</span></p>
+<h3>2. Que se puedan leer</h3>
+<p><span class="dir">[Título: <strong>2 · Simple y grande lo justo</strong>]</span></p>
+<ul>
+<li><em>Letra simple. Blanca con borde o con fondo oscuro.</em></li>
+<li><em>Pocas palabras por línea: tres o cuatro. Que se lean de un vistazo.</em></li>
+<li><em>Un solo estilo en todo el video. No cambiés de color en cada frase.</em></li>
+</ul>
+<p><span class="dir">[DEMO: ❌ letra con adornos, amarilla, cinco líneas · ✅ letra simple, dos líneas]</span></p>
+<h3>3. Dónde van</h3>
+<p><span class="dir">[Título: <strong>3 · La zona segura</strong>]</span></p>
+<ul>
+<li><em>Abajo del todo no: ahí Instagram pone tu nombre y el texto de la publicación.</em></li>
+<li><em>A la derecha tampoco: ahí van los botones.</em></li>
+<li><em>Ponelos un poco más abajo del centro, sin tapar tu cara.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: mover los subtítulos y enseñar un reel publicado con los botones encima]</span></p>
+<h3>4. El texto de arriba: tu gancho escrito</h3>
+<p><span class="dir">[Título: <strong>4 · El gancho, escrito</strong>]</span></p>
+<ul>
+<li><em>En los primeros segundos, escribí tu gancho como texto. Mucha gente lee antes de escuchar.</em></li>
+<li><em>Es la primera línea de tu guion de la clase 4. Ya la tenés.</em></li>
+<li><em>Corto: una línea, máximo dos.</em></li>
+<li><em>Arriba o en el centro. Y que dure lo suficiente para leerlo dos veces.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: agregar texto, escribir el gancho, ajustar duración]</span></p>
+<h3>5. Resaltar una palabra</h3>
+<p><span class="dir">[Título: <strong>5 · Una palabra, no todas</strong>]</span></p>
+<ul>
+<li><em>Si querés resaltar algo, que sea una palabra por frase: la importante.</em></li>
+<li><em>Con otro color o un poquito más grande.</em></li>
+<li><em>Si resaltás todo, no resaltás nada.</em></li>
+</ul>
+<h3>Cierre</h3>
+<p>Subtítulos que se leen, en su lugar, y tu gancho escrito arriba. Tu video ya se entiende sin sonido. En la próxima clase lo dejamos listo para publicar: la música, la portada y cómo exportarlo.</p>
+<h3>Tarea</h3>
+<p>Ponele subtítulos y el gancho escrito al video que cortaste. Miralo sin sonido: ¿se entiende?</p></div></details></article><article id="c-07"><details><summary><h2 class="pz">Clase 7 · Editar 3: música, portada y exportar</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>8–10 min · grabación de pantalla, con tu cara al inicio y al cierre · meta: un video listo para publicar</strong><br/> ⚠️ Seguís con el mismo reel de las clases 5 y 6. Al final de la clase, el reel queda terminado.</p>
+<h3>Apertura</h3>
+<p>Ya está cortado y ya tiene letras. Faltan tres detalles para publicarlo: la música, la portada y exportarlo bien. Son cortos, pero se notan.</p>
+<h3>1. Música (bajita)</h3>
+<p><span class="dir">[Título: <strong>1 · Tu voz primero</strong>]</span></p>
+<ul>
+<li><em>La música es opcional. Si hablás, lo importante es tu voz.</em></li>
+<li><em>Si ponés música, bajita. Que casi no se note.</em></li>
+<li><em>Probalo con audífonos y sin audífonos: ¿se te entiende todo?</em></li>
+<li><em>Si querés una canción de tendencia, agregala en Instagram al publicar, no en la app de edición.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: agregar música, bajar el volumen]</span></p>
+<h3>2. Exportar limpio</h3>
+<p><span class="dir">[Título: <strong>2 · Exportar</strong>]</span></p>
+<ul>
+<li><em>Exportá en la mejor calidad que te deje la app.</em></li>
+<li><em>Revisá que no quede la marca de agua de la app. En algunas hay un clip final con el logo: borralo.</em></li>
+<li><em>Guardalo en tu celular antes de subirlo.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: borrar el clip final con el logo, exportar]</span></p>
+<h3>3. La portada</h3>
+<p><span class="dir">[Título: <strong>3 · La portada</strong>]</span></p>
+<ul>
+<li><em>La portada es lo que se ve en tu perfil. Es la que decide si alguien que entra a tu perfil abre ese video.</em></li>
+<li><em>Opción fácil: elegí un cuadro del video donde se te vea bien la cara.</em></li>
+<li><em>Opción mejor: una foto tuya con el gancho escrito, en pocas palabras.</em></li>
+<li><em>El texto, en el centro. En el perfil la portada se ve recortada y los bordes se pierden.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: elegir portada al publicar, y cómo se ve en el perfil]</span></p>
+<h3>4. Antes de publicar: tres revisiones</h3>
+<p><span class="dir">[Título: <strong>4 · Tres revisiones</strong>]</span><br/>
+1. <em>Miralo completo sin sonido.</em><br/>
+2. <em>Miralo completo con sonido.</em><br/>
+3. <em>Leé los subtítulos una vez más.</em></p>
+<h3>5. El texto de la publicación</h3>
+<ul>
+<li><em>Una o dos líneas que repitan tu gancho con otras palabras.</em></li>
+<li><em>Una pregunta o una invitación al final: "¿a vos también te pasa?".</em></li>
+<li><em>Tres o cuatro etiquetas de tu tema. No treinta.</em></li>
+</ul>
+<h3>6. Guardá tu estilo</h3>
+<ul>
+<li><em>Si tu app deja guardar el estilo de las letras, guardalo. La próxima vez ya está.</em></li>
+<li><em>Mismas letras, mismo lugar, cada vez. Así tu gente reconoce tus videos.</em></li>
+</ul>
+<h3>Cierre</h3>
+<p>Cortar, letras, y dejarlo listo. Eso es editar un reel. El primero te va a tomar más tiempo. El décimo, mucho menos. En la próxima clase hago uno completo, de principio a fin, para que lo veás todo junto.</p>
+<h3>Tarea</h3>
+<p>Exportá tu video. No tenés que publicarlo hoy, pero dejalo listo.</p></div></details></article><article id="c-08"><details><summary><h2 class="pz">Clase 8 · Un reel de principio a fin</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>12–15 min · en casa, junto a la ventana, y grabación de pantalla · meta: ver todo el proceso seguido, en tiempo real</strong><br/> ⚠️ <strong>Esto no es un guion, es un orden de pasos.</strong> Hacés un reel tuyo de verdad frente a la cámara y vas hablando mientras lo hacés. Aquí solo está el orden y lo que no se te puede olvidar mostrar.<br/> ⚠️ Ese reel lo publicás después de verdad, si querés. El tema lo escogés vos; que no sea patrocinado.<br/> <strong>Reloj en pantalla</strong> en cada paso, para que vean cuánto dura cada cosa de verdad. Los errores no se cortan: si algo no sale, es parte de la clase.</p>
+<h3>Apertura</h3>
+<p>En las clases anteriores viste cada paso por separado. Hoy los hago todos juntos, uno detrás del otro, con un video que voy a publicar de verdad. Y te voy contando qué pienso mientras lo hago.</p>
+<h3>1. La idea y las tres líneas</h3>
+<p><span class="dir">[Título: <strong>1 · Tres líneas</strong>]</span> <span class="dir">[RELOJ en pantalla]</span></p>
+<ul>
+<li><em>Joa abre las notas y escribe su guion: gancho, lo importante, cierre.</em></li>
+<li><em>Dice en voz alta por qué eligió ese gancho.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: notas, escribe en tiempo real]</span></p>
+<h3>2. El set</h3>
+<p><span class="dir">[Título: <strong>2 · Ventana y altura</strong>]</span></p>
+<ul>
+<li><em>Se pone frente a la ventana, celular a la altura de los ojos.</em></li>
+<li><em>Revisa el fondo: quita lo que distrae.</em></li>
+</ul>
+<p><span class="dir">[DEMO: se ve cómo arma el set, sin cortes]</span></p>
+<h3>3. Grabar</h3>
+<p><span class="dir">[Título: <strong>3 · Dos tomas</strong>]</span></p>
+<ul>
+<li><em>Graba la primera toma. Se equivoca, o no: se queda.</em></li>
+<li><em>Graba la segunda. Dice cuál le gustó más y por qué.</em></li>
+<li><em>Si se traba en una frase, la repite sin parar la grabación.</em></li>
+</ul>
+<p><span class="dir">[DEMO: las dos tomas, completas]</span></p>
+<h3>4. Cortar</h3>
+<p><span class="dir">[Título: <strong>4 · Cortar</strong>]</span></p>
+<ul>
+<li><em>Las puntas, los silencios, lo que sobra. Lo de la clase 5.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: en tiempo real, sin acelerar]</span></p>
+<h3>5. Letras</h3>
+<p><span class="dir">[Título: <strong>5 · Letras</strong>]</span></p>
+<ul>
+<li><em>Subtítulos, corregir palabras, el gancho arriba. Lo de la clase 6.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: en tiempo real]</span></p>
+<h3>6. Dejarlo listo</h3>
+<p><span class="dir">[Título: <strong>6 · Listo</strong>]</span></p>
+<ul>
+<li><em>Música bajita o sin música, exportar, portada. Lo de la clase 7.</em></li>
+<li><em>Escribe el texto de la publicación.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: hasta la pantalla de publicar]</span></p>
+<h3>7. Cuánto tardé</h3>
+<p><span class="dir">[Título: <strong>⏱ En total</strong>]</span></p>
+<ul>
+<li><em>Joa dice el tiempo real que marcó el reloj.</em> ⚠️ (el número real del día de la grabación, no uno inventado)</li>
+<li><em>Y dice cuánto tardaba al principio, si lo recuerda.</em> ⚠️ (solo si es cierto)</li>
+</ul>
+<h3>Cierre</h3>
+<p>Eso es todo el proceso. No hay nada escondido. Ahora te toca a vos: una idea, tres líneas, dos tomas, cortar, letras y listo. En la última clase te cuento cómo hago todo esto con un bebé chiquito y casi nada de tiempo.</p>
+<h3>Tarea</h3>
+<p>Hacé tu primer reel completo, de principio a fin. Y publicalo. No tiene que ser perfecto: tiene que estar hecho.</p></div></details></article><article id="c-09"><details><summary><h2 class="pz">Clase 9 · Grabar con un bebé (o con poquito tiempo)</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>6–8 min · en casa · el bebé no sale en cámara (que se oiga de fondo está bien)</strong></p>
+<h3>Apertura</h3>
+<p>Esta es la clase que yo necesitaba. Porque una cosa es grabar cuando tenés tiempo… y otra con un bebé chiquito que se despierta cuando quiere. ¿Verdad?<br/>
+<em>Joa cuenta en una o dos frases cómo es su día real.</em> ⚠️ (su historia, sin detalles médicos)</p>
+<h3>1. No grabes un video. Grabá cuatro.</h3>
+<p><span class="dir">[Título: <strong>Una siesta = 4 videos</strong>]</span></p>
+<ul>
+<li><em>Cuando tenés un rato, no grabes uno solo. Grabá tres o cuatro de una vez, en el mismo lugar.</em></li>
+<li><em>Mismo set, misma luz. Si querés que parezcan días distintos, cambiate solo la blusa o el pelo.</em></li>
+<li><em>Los guiones de tres líneas ya los tenés escritos (clase 4), así que solo tenés que grabar.</em></li>
+</ul>
+<h3>2. La lista de ideas siempre abierta</h3>
+<ul>
+<li><em>Una nota en el celular que se llama "Ideas". Cada vez que se te ocurre algo, lo anotás. A las 3 de la mañana dando de comer también.</em></li>
+<li><em>Cuando tenés tiempo de grabar, no pensás: abrís la lista.</em></li>
+</ul>
+<h3>3. Separá grabar de editar</h3>
+<ul>
+<li><em>Grabar: cuando hay luz y silencio (la siesta).</em></li>
+<li><em>Editar: cuando hay celular en la mano y nada más (dando de comer, en la fila, en la noche).</em></li>
+<li><em>Así aprovechás ratos que antes se perdían.</em></li>
+</ul>
+<h3>4. Tu semana simple</h3>
+<p><span class="dir">[Título en pantalla, tabla]</span></p>
+<ul>
+<li><em>Un día: escribir 4 guiones (15 minutos).</em></li>
+<li><em>Una siesta: grabar los 4.</em></li>
+<li><em>Ratos sueltos: editar uno por día.</em></li>
+<li><em>Publicar cuando puedas. Un día a la vez.</em></li>
+</ul>
+<h3>5. Cuando no se puede</h3>
+<ul>
+<li><em>Habrá semanas que no grabás nada. Está bien. El contenido espera. Tu bebé, tu cuerpo y tu descanso, no.</em></li>
+<li><em>Un video publicado tarde vale más que uno que nunca grabaste por esperar el momento perfecto.</em></li>
+</ul>
+<h3>6. Sobre mostrar a tu bebé</h3>
+<ul>
+<li><em>Es tu decisión. Yo decidí no mostrarle la carita por ahora.</em> ⚠️ (confirmar que quiere decirlo)</li>
+<li><em>Se puede contar la maternidad sin mostrar al bebé: manitas, piecitos, tu experiencia.</em></li>
+</ul>
+<h3>Cierre del curso</h3>
+<p>Llegaste al final. Ya sabés perderle el miedo, armar tu set, hablarle a la cámara, escribir en tres líneas, editar, y hacerlo con poquito tiempo.<br/>
+Ahora lo único que falta es lo más importante: publicar el primero.<br/>
+Cuando lo publiqués, etiquetame. Lo quiero ver. De verdad.<br/>
+Un abrazo enorme. Gracias por estar aquí.<br/>
+— Joa</p></div></details></article><article id="c-VIP"><details><summary><h2 class="pz">Clase avanzada (VIP) · Tus primeras marcas</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>8–10 min · mesa o set del podcast, y grabación de pantalla de tu perfil · meta: que mande su primera propuesta a una marca esta semana</strong><br/> 🎓 <strong>Clase avanzada: solo para las que compran VIP Fundadoras. No es parte del paquete básico.</strong><br/> ✅ <strong>Ya dijiste que sí querés enseñar cómo trabajás con marcas.</strong> Lo que está aquí en puntos es un esqueleto: lo llenás con lo que vos hacés de verdad.<br/> ⛔ Sin montos, sin nombres de marcas que no hayan dado permiso y sin detalles de contratos. Sin prometer ingresos.</p>
+<h3>Apertura</h3>
+<p>Muchas me preguntan: "Joa, ¿cómo hacés para trabajar con marcas?". Y la verdad es que no empecé con un montón de seguidores. Empecé con un perfil ordenado y un mensaje bien escrito. ⚠️ (confirmar que así empezó; si no, ella cuenta cómo fue de verdad)</p>
+<p>Hoy te enseño lo que una marca mira antes de decirte que sí, y cómo escribirle.</p>
+<h3>1. Qué mira una marca (y no son solo los seguidores)</h3>
+<p><span class="dir">[Título: <strong>Lo que mira una marca</strong>]</span></p>
+<ul>
+<li><em>Que se entienda de qué hablás. En cinco segundos, viendo tu perfil.</em></li>
+<li><em>Que tus videos se vean y se escuchen bien. Eso ya lo sabés hacer: clases 2 y de la 5 a la 7.</em></li>
+<li><em>Que tu gente te conteste: comentarios, mensajes, guardados.</em></li>
+<li><em>Que publiqués seguido. Una marca no quiere un perfil que desaparece un mes.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: su perfil, de arriba hacia abajo: biografía, destacadas, últimos reels]</span></p>
+<h3>2. Ordená tu perfil antes de escribirle a nadie</h3>
+<p><span class="dir">[Título: <strong>Tu perfil es tu carta de presentación</strong>]</span></p>
+<ul>
+<li><em>Biografía: quién sos y de qué hablás, en una línea.</em></li>
+<li><em>Un correo o una forma clara de contactarte.</em></li>
+<li><em>Tres videos fijados: el que mejor te representa, el que más gustó y uno donde recomendás algo.</em></li>
+<li><em>Joa muestra cómo tiene el suyo.</em> ⚠️ (lo muestra en pantalla)</li>
+</ul>
+<h3>3. Tu primer video "de marca" no necesita marca</h3>
+<p><span class="dir">[Título: <strong>Practicá con lo que ya usás</strong>]</span></p>
+<ul>
+<li><em>Elegí un producto que ya usás y que te gusta de verdad.</em></li>
+<li><em>Grabá un video como si fuera una colaboración: lo mostrás, contás por qué lo usás, cómo lo usás.</em></li>
+<li><em>No digás que es publicidad, porque no lo es. Es tu recomendación.</em></li>
+<li><em>Ese video es tu muestra. Es lo que le vas a enseñar a la marca.</em></li>
+</ul>
+<p><span class="dir">[DEMO: Joa graba 15 segundos con un producto que tiene en la casa]</span> ⚠️ (un producto sin contrato de exclusividad con otra marca)</p>
+<h3>4. Cómo escribirle a una marca</h3>
+<p><span class="dir">[Título: <strong>El mensaje: corto y claro</strong>]</span></p>
+<ul>
+<li><em>Empezá por marcas pequeñas y cercanas: las de tu zona, las que ya comprás.</em></li>
+<li><em>Escribí por correo o por mensaje directo. Tres partes:</em></li>
+</ul>
+<ol>
+<li><em>Quién sos y de qué hablás.</em></li>
+<li><em>Por qué esa marca: qué usás de ellos, y una idea concreta de video.</em></li>
+<li><em>Tu muestra: el enlace a tu video.</em></li>
+</ol>
+<ul>
+<li><em>Nada de "hola, ¿hacen colaboraciones?". Llegá con la idea.</em></li>
+</ul>
+<p><span class="dir">[PANTALLA: el mensaje modelo, escrito en notas]</span></p>
+<p><strong>Mensaje modelo (lo dice despacio y queda escrito en pantalla):</strong><br/>
+Hola, soy [tu nombre]. Hago videos sobre [tu tema] para [tu gente]. Uso [producto] desde hace [tiempo] y tengo una idea de video: [la idea en una línea]. Aquí hay un ejemplo de cómo grabo: [enlace]. ¿Con quién puedo hablarlo?</p>
+<h3>5. Tu kit de medios, en una página</h3>
+<p><span class="dir">[Título: <strong>Una página. No más.</strong>]</span></p>
+<ul>
+<li><em>Quién sos y de qué hablás, con una foto tuya.</em></li>
+<li><em>Tus números reales, con captura de pantalla de las estadísticas de Instagram: seguidores, alcance del último mes, de dónde es tu gente. Sin inflar nada.</em></li>
+<li><em>Dos o tres videos que te representen.</em></li>
+<li><em>Qué ofrecés: un reel, historias, o las dos cosas.</em></li>
+<li><em>Cómo contactarte.</em></li>
+<li><em>Joa muestra cómo es el suyo, tapando lo que sea privado.</em> ⚠️ (solo si tiene uno y quiere mostrarlo)</li>
+</ul>
+<p><span class="dir">[PANTALLA: un kit de medios de ejemplo, de una página]</span></p>
+<h3>6. Cuando te dicen que sí</h3>
+<p><span class="dir">[Título: <strong>Antes de grabar, por escrito</strong>]</span></p>
+<ul>
+<li><em>Pedí por escrito qué esperan: cuántos videos, para cuándo, qué tenés que decir y qué no.</em></li>
+<li><em>Preguntá si pueden usar tu video en sus anuncios. Eso se conversa aparte.</em></li>
+<li><em>Canje o pago: Joa cuenta cómo decide ella.</em> ⚠️ (su criterio, sin montos)</li>
+<li><em>Decí siempre que es publicidad. Usá la etiqueta de colaboración pagada de Instagram. Tu gente confía en vos porque no le escondés nada.</em></li>
+<li><em>Si un producto no te gusta, decí que no. Tu palabra vale más que un producto gratis.</em></li>
+</ul>
+<h3>7. Lo que no te prometo</h3>
+<ul>
+<li><em>Que una marca te va a contestar a la primera. A veces contestan a la quinta.</em></li>
+<li><em>Cuánto vas a ganar. Depende de tu tema, de tu gente y de tu constancia.</em></li>
+</ul>
+<h3>Cierre</h3>
+<p>Perfil ordenado, un video de muestra, tu kit de una página y un mensaje con una idea. Eso es todo lo que necesitás para escribirle a tu primera marca. Hacelo esta semana, ¿verdad? Y cuando te contesten, contame.</p>
+<h3>Tarea</h3>
+<p>Escribile a una marca que ya usás. Una sola. Hoy.</p></div></details></article><h2 class="sec" id="s5">5 · Reels, historias y carruseles</h2><p class="lead">En el orden en que se publican. En cada uno: los ganchos, la tabla de tomas con el texto en pantalla y lo que decís, el texto de la publicación y lo que hay que confirmar.</p><article id="r-S0"><details><summary><h2 class="pz">S0 · Encuesta en historias: "¿Qué querés que te enseñe?"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> antes de todo · <strong>Meta:</strong> saber qué quiere aprender tu público, antes de grabar · <strong>Formato:</strong> 3 historias seguidas, sin producción<br/> <strong>Quién graba:</strong> vos, selfie, en casa. <strong>El bebé:</strong> no sale.</p>
+<h2>Las historias</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Qué se ve</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+<th>Sticker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="#">1</td>
+<td data-l="Qué se ve">Selfie, hablando a la cámara</td>
+<td data-l="Texto en pantalla"><strong>Les quiero enseñar algo 👀</strong></td>
+<td data-l="Lo que decís">Me escriben mucho preguntándome cómo grabo, cómo edito, cómo trabajo con marcas. Y estoy pensando en enseñarles. Pero primero quiero saber qué les sirve más.</td>
+<td data-l="Sticker">Ninguno</td>
+</tr>
+<tr>
+<td data-l="#">2</td>
+<td data-l="Qué se ve">Fondo sencillo o una foto tuya</td>
+<td data-l="Texto en pantalla"><strong>¿Qué querés que te enseñe primero?</strong></td>
+<td data-l="Lo que decís">(sin hablar)</td>
+<td data-l="Sticker"><strong>Encuesta con 4 opciones:</strong> Grabarme sin pena · Editar en el celular · Trabajar con marcas · Hablar frente a cámara</td>
+</tr>
+<tr>
+<td data-l="#">3</td>
+<td data-l="Qué se ve">Selfie</td>
+<td data-l="Texto en pantalla"><strong>Contame 👇</strong></td>
+<td data-l="Lo que decís">Y si es otra cosa, escribímelo aquí. Leo todo.</td>
+<td data-l="Sticker"><strong>Caja de preguntas:</strong> "¿Qué te frena para grabarte?"</td>
+</tr>
+</tbody>
+</table></div>
+<p>⚠️ La frase "Me escriben mucho preguntándome…" se queda solo si es verdad. Si no, empezás con "Estoy pensando en enseñarles algo".</p>
+<h2>Qué hacemos con los resultados (después de 24 horas)</h2>
+<ul>
+<li>Le tomás captura a los resultados de la encuesta y a las respuestas de la caja, y nos las mandás.</li>
+<li>La opción que gane define la promesa principal de la página de venta y el tema del R1.</li>
+<li>Las respuestas de la caja son las palabras de tu público: de ahí salen los ganchos y los títulos.</li>
+<li>La clase de marcas es una clase avanzada solo para el VIP. Si "Trabajar con marcas" gana la encuesta, ese será el tema del segundo curso.</li>
+</ul></div></details></article><article id="r-R1"><details><summary><h2 class="pz">R1 · El método: "Así grabo y edito con un bebé chiquito"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> 1 (el reel del método, 23 de noviembre) · <strong>Meta:</strong> alcance y comentarios · <strong>Duración:</strong> ~38 s (~98 palabras) · <strong>🔑 GRABAR</strong><br/> <strong>Quién graba:</strong> vos, de verdad (sin avatar). Las tomas de tus manos y del celular también son reales.<br/> <strong>El bebé:</strong> no sale. Como mucho, el monitor del bebé o una cobijita en el sofá.</p>
+<h2>5 ganchos (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Así grabo y edito mis reels… con un bebé chiquito y solo el celular."</li>
+<li>"No tengo aro de luz, no tengo cámara, y tengo un bebé. Así grabo."</li>
+<li>"La gente me pregunta cómo grabo con un bebé. Así, en una siesta."</li>
+<li>"Cuatro pasos. Una siesta. Cero equipo."</li>
+<li>"Yo pensaba que para grabarme necesitaba tiempo. Lo que necesitaba era una siesta."</li>
+</ol>
+<h2>Producción (toma · texto en pantalla · lo que decís)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–3</td>
+<td data-l="Toma">Tu cara, de cerca. Tenés el celular en la mano y se lo enseñás a la cámara</td>
+<td data-l="Texto en pantalla"><strong>Grabo y edito con un bebé 👶 y solo el celular</strong></td>
+<td data-l="Lo que decís">Así grabo y edito mis reels… con un bebé chiquito y solo el celular.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">3–8</td>
+<td data-l="Toma">Corte: te movés frente a la ventana y la luz te da en la cara</td>
+<td data-l="Texto en pantalla"><strong>1 · Ventana, no aro de luz</strong></td>
+<td data-l="Lo que decís">Paso uno: me pongo frente a la ventana. Nada de aro de luz.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">8–13</td>
+<td data-l="Toma">Tus manos ponen el celular sobre una pila de libros</td>
+<td data-l="Texto en pantalla"><strong>2 · Celular a la altura de tus ojos</strong></td>
+<td data-l="Lo que decís">Paso dos: el celular a la altura de mis ojos. Literal, encima de unos libros.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">13–19</td>
+<td data-l="Toma">Cortes rápidos: 3 tomas distintas, misma ropa, un reloj o el monitor al fondo</td>
+<td data-l="Texto en pantalla"><strong>3 · Todo en una siesta</strong></td>
+<td data-l="Lo que decís">Paso tres: grabo todo en una siesta. Tres, cuatro videos, de una vez.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">19–27</td>
+<td data-l="Toma">Grabación de pantalla de la edición en el celular (cortar, subtítulos, texto)</td>
+<td data-l="Texto en pantalla"><strong>4 · Editar en el celular</strong></td>
+<td data-l="Lo que decís">Y paso cuatro: edito en el celular. Corto los silencios, pongo subtítulos y un texto arriba. Listo.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">27–32</td>
+<td data-l="Toma">De vuelta a tu cara, sonriendo</td>
+<td data-l="Texto en pantalla"><strong>¿Perfecto? No. ¿Hecho? Sí.</strong></td>
+<td data-l="Lo que decís">¿Perfecto? No. ¿Hecho? Sí. Y eso es lo que importa, ¿verdad?</td>
+</tr>
+<tr>
+<td data-l="Tiempo">32–38</td>
+<td data-l="Toma">Tu cara, señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá GRABAR 👇 clase gratis</strong></td>
+<td data-l="Lo que decís">Si te da pena grabarte, te hice una clase gratis de 5 minutos. Comentá GRABAR y te la mando.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Para que se repita solo:</strong> el final "te la mando" conecta con la primera imagen del celular en la mano.<br/> <strong>Portada:</strong> vos frente a la ventana con el celular, y el texto "Grabo y edito con un bebé 👶" en el centro.<br/> <strong>Edición (la hacemos nosotros):</strong> subtítulos pequeños blancos abajo, tarjetas con los números 1 a 4, cortes rápidos, música bajita.</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>No tengo aro de luz. No tengo cámara. Tengo un bebé chiquito y un celular. 📱<br/>
+Así grabo y edito: ventana, celular a la altura de los ojos, todo en una siesta, y edito ahí mismo.<br/>
+¿Te da pena grabarte? Comentá GRABAR y te mando mi clase gratis de 5 minutos 💛<br/>
+#crearcontenido #mamáscreadoras #grabarconelcelular #costarica</p>
+</blockquote>
+<h2>⚠️ Para confirmar con vos antes de grabar</h2>
+<ul>
+<li>Que este es de verdad tu proceso (libros o trípode, todo en una siesta, editás en el celular). Si algo es distinto, se cambia el paso, no la verdad.</li>
+<li>La app es CapCut. El nombre no se dice en el video, a propósito.</li>
+<li>La grabación de pantalla de los segundos 19 a 27: la edición de un reel tuyo, real, ya publicado. Lo mejor es uno de una colaboración con una marca, porque conecta con la clase avanzada, pero ⚠️ solo si el contrato con la marca permite volver a mostrarlo. Si no, cualquier otro reel tuyo.</li>
+<li>La palabra GRABAR ya funciona y la clase gratis ya existe.</li>
+</ul></div></details></article><article id="r-R2"><details><summary><h2 class="pz">R2 · "Está normalizado pensar que necesitás todo esto"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> 1 (miércoles 25 de noviembre) · <strong>Meta:</strong> que lo manden por mensaje, y comentarios · <strong>Duración:</strong> ~35 s (~90 palabras) · <strong>🔑 GRABAR</strong><br/> <strong>Quién graba:</strong> vos, de verdad. Objetos: aro de luz, cámara, micrófono (⚠️ si no los tenés, usamos fotos de archivo marcadas como gráfico, no hechas con IA).</p>
+<h2>5 ganchos (el elegido es el 1; es tu sello: lo normalizado ← y lo contrario)</h2>
+<ol>
+<li>✅ "Está muy normalizado pensar que para grabarte necesitás todo esto… y no."</li>
+<li>"Dejá de comprar cosas para grabarte. En serio."</li>
+<li>"Lo que te frena a grabarte no es el equipo."</li>
+<li>"Soy periodista y te digo: el aro de luz no es el problema."</li>
+<li>"Tres cosas para verte bien en video. Ya las tenés en tu casa."</li>
+</ol>
+<h2>Producción</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–4</td>
+<td data-l="Toma">Toma abierta: una mesa con aro de luz, cámara y micrófono; vos los señalás</td>
+<td data-l="Texto en pantalla"><strong>¿Necesitás todo esto? ❌</strong></td>
+<td data-l="Lo que decís">Está muy normalizado pensar que para grabarte necesitás todo esto… y no.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">4–7</td>
+<td data-l="Toma">Lo quitás todo hacia un lado, de un solo movimiento</td>
+<td data-l="Texto en pantalla">—</td>
+<td data-l="Lo que decís">Y no.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">7–13</td>
+<td data-l="Toma">De cerca, levantás el celular</td>
+<td data-l="Texto en pantalla"><strong>Yo grabo con esto 📱</strong></td>
+<td data-l="Lo que decís">Yo soy periodista. He grabado con cámaras de todo tipo. ¿Y sabés con qué grabo hoy? Con esto.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">13–24</td>
+<td data-l="Toma">3 tarjetas que aparecen al lado de tu cara</td>
+<td data-l="Texto en pantalla"><strong>🪟 Una ventana · 📚 Algo para subir el celular · 👤 Una persona en mente</strong></td>
+<td data-l="Lo que decís">Lo que sí necesitás son tres cosas, y ya las tenés: una ventana, algo para subir el celular a tus ojos… y una persona en mente a quien hablarle.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">24–29</td>
+<td data-l="Toma">Acercamiento a tu cara; la tarjeta 3 parpadea</td>
+<td data-l="Texto en pantalla"><strong>La #3 es la más importante</strong></td>
+<td data-l="Lo que decís">La tercera es la más importante. Y casi nadie la dice.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">29–35</td>
+<td data-l="Toma">Tu cara, señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá GRABAR 👇</strong></td>
+<td data-l="Lo que decís">Te la explico en una clase gratis de cinco minutos. Comentá GRABAR y te la mando.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>La curiosidad abierta:</strong> "la #3 casi nadie la dice" se completa en la clase gratis (una razón real para comentar). La explicación corta sí se dice en el reel, así que el gancho no engaña.<br/> <strong>Para que lo manden:</strong> texto al final: "Mandáselo a la amiga del aro de luz 😅".<br/> <strong>Portada:</strong> los objetos tachados con ❌, vos con el celular, "No necesitás nada de esto".</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>Está muy normalizado pensar que para empezar a grabarte necesitás aro de luz, cámara y micrófono. Y no. 🙅‍♀️<br/>
+Necesitás una ventana, algo para subir el celular y una persona en mente.<br/>
+La tercera es la que cambia todo. Comentá GRABAR y te mando la clase gratis 💛<br/>
+#grabarconelcelular #crearcontenido #mamáscreadoras</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>"He grabado con cámaras de todo tipo": ¿es verdad en tu trabajo como periodista? Si no, quitamos la frase.</li>
+</ul></div></details></article><article id="r-R3"><details><summary><h2 class="pz">R3 · "Lo que aprendí entrevistando gente frente a cámara"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> 1 (viernes 27 de noviembre) · <strong>Meta:</strong> que lo guarden y te sigan · <strong>Duración:</strong> ~40 s (~105 palabras) · <strong>🔑 GRABAR</strong><br/> <strong>Quién graba:</strong> vos. Si se puede, en el set del podcast (el micrófono al fondo muestra tu experiencia sin decirla).<br/> ⛔ Sin nombres de entrevistados políticos y sin clips de ellos.</p>
+<h2>5 ganchos (el elegido es el 1)</h2>
+<ol>
+<li>✅ "He entrevistado a mucha gente frente a cámara… y casi nadie se ve natural en la primera respuesta."</li>
+<li>"Tu primera toma nunca es la buena. Y está bien."</li>
+<li>"El truco de periodista para verte natural en video."</li>
+<li>"Si te ves rara en video, borrá la primera toma. Te explico por qué."</li>
+<li>"Soy periodista, y esto es lo que hago antes de cada entrevista."</li>
+</ol>
+<h2>Producción</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–5</td>
+<td data-l="Toma">Vos en el set del podcast, de cerca</td>
+<td data-l="Texto en pantalla"><strong>El truco de periodista para verte natural 🎙️</strong></td>
+<td data-l="Lo que decís">He entrevistado a mucha gente frente a cámara… y casi nadie se ve natural en la primera respuesta.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">5–8</td>
+<td data-l="Toma">Acercamiento</td>
+<td data-l="Texto en pantalla"><strong>Nadie.</strong></td>
+<td data-l="Lo que decís">Nadie.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">8–15</td>
+<td data-l="Toma">Toma real del podcast: un entrevistado sonriendo (⚠️ solo con permiso del entrevistado; si no, una toma del set vacío)</td>
+<td data-l="Texto en pantalla"><strong>Se relajan en la 2ª respuesta</strong></td>
+<td data-l="Lo que decís">¿Sabés cuándo se relajan? En la segunda respuesta. Cuando se les olvida que hay una cámara.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">15–24</td>
+<td data-l="Toma">Vos frente al celular en casa: toma 1 (tiesa) ← toma 2 (natural), pantalla dividida</td>
+<td data-l="Texto en pantalla"><strong>Toma 1 = calentar · Toma 2 = la buena</strong></td>
+<td data-l="Lo que decís">Entonces el truco es este: no publiqués tu primera toma. Grabá la primera para calentar… y la segunda es la buena.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">24–33</td>
+<td data-l="Toma">Cerca del lente, íntimo</td>
+<td data-l="Texto en pantalla"><strong>Hablale a UNA persona 👤</strong></td>
+<td data-l="Lo que decís">Y otra cosa: no le hablés a "la gente". Hablale a una sola persona. A tu amiga. Mirá el lente como si fuera ella.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">33–40</td>
+<td data-l="Toma">Tu cara, señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá GRABAR 👇 clase gratis</strong></td>
+<td data-l="Lo que decís">En mi clase gratis te enseño a hacerlo paso a paso. Comentá GRABAR y te la mando.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Para que lo guarden:</strong> dos consejos claros y útiles. Texto pequeño al final: "Guardalo para tu próxima grabación".<br/> <strong>Portada:</strong> vos con el micrófono del podcast, "Truco de periodista 🎙️".</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>En entrevistas aprendí algo: casi nadie se ve natural en la primera respuesta. Ni siquiera la gente acostumbrada a la cámara.<br/>
+Así que: 1) la primera toma es para calentar, 2) hablale a una sola persona.<br/>
+Guardalo para tu próxima grabación 📌 y comentá GRABAR si querés mi clase gratis.<br/>
+#periodista #grabarconelcelular #hablarencámara #crearcontenido</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>Que la observación «se relajan en la segunda respuesta» sea verdad según tu experiencia. Es el corazón del reel; si vos lo ves distinto, usamos tus palabras.</li>
+<li>Permiso para cada toma donde salga un entrevistado.</li>
+</ul></div></details></article><article id="r-R4"><details><summary><h2 class="pz">R4 · "Estoy creando algo… y te lo quiero contar primero a vos"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> 2 (lista de espera, se publica el miércoles 2 de diciembre) · <strong>Meta:</strong> la lista de espera · <strong>Duración:</strong> ~48 s (~120 palabras) · <strong>🔑 LISTA</strong><br/> <strong>Versión de presentación (R4-a, 30 de noviembre):</strong> la misma grabación hasta el 0:30, sin el anuncio, y cerrando con GRABAR.<br/> <strong>Quién graba:</strong> vos. Tomas reales: el set del podcast, corriendo, el celular sobre los libros.<br/> <strong>El bebé:</strong> no sale.</p>
+<h2>5 ganchos (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Estoy creando algo… y te lo quiero contar primero a vos."</li>
+<li>"Para las que son nuevas aquí: soy Joa, y tengo algo que contarles."</li>
+<li>"Llevo semanas grabando algo en las siestas de mi bebé."</li>
+<li>"Me han preguntado tanto esto… que decidí hacer algo."</li>
+<li>"Nunca pensé que iba a hacer esto. Pero aquí estamos."</li>
+</ol>
+<h2>Producción</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–4</td>
+<td data-l="Toma">Tu cara, de cerca, sonrisa nerviosa y emocionada</td>
+<td data-l="Texto en pantalla"><strong>Estoy creando algo 🤫</strong></td>
+<td data-l="Lo que decís">Estoy creando algo… y te lo quiero contar primero a vos.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">4–12</td>
+<td data-l="Toma">Tomas rápidas: micrófono del podcast ← tenis de correr ← mano sobre la panza o una cobijita de bebé</td>
+<td data-l="Texto en pantalla"><strong>Periodista · podcast · mamá</strong></td>
+<td data-l="Lo que decís">Para las que son nuevas aquí: soy Joa. Periodista, tengo un podcast… y hace unos meses me convertí en mamá de un bebé que nació antes de tiempo.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">12–20</td>
+<td data-l="Toma">El celular sobre los libros junto a la ventana, tus manos editando</td>
+<td data-l="Texto en pantalla"><strong>Grabo y edito sola, desde el celular</strong></td>
+<td data-l="Lo que decís">Y en medio de todo eso, empecé a grabar y editar mis videos yo sola. Desde el celular. En las siestas.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">20–27</td>
+<td data-l="Toma">Capturas borrosas de mensajes <strong>reales</strong> (⚠️ con permiso, nombres tapados)</td>
+<td data-l="Texto en pantalla"><strong>"¿Cómo hacés?" · "Me da pena" · "No sé editar"</strong></td>
+<td data-l="Lo que decís">Y cada vez que lo cuento, me escriben lo mismo: "¿cómo hacés?", "a mí me da pena", "no sé editar".</td>
+</tr>
+<tr>
+<td data-l="Tiempo">27–38</td>
+<td data-l="Toma">Tu cara, seria y cálida</td>
+<td data-l="Texto en pantalla"><strong>Simple 2027: este año sí te grabás</strong></td>
+<td data-l="Lo que decís">Entonces… hice un curso. Cortito, simple, para que empecés el año grabándote y editando desde el celular. Sin miedo y sin equipo caro.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">38–43</td>
+<td data-l="Toma">Tarjeta con la fecha</td>
+<td data-l="Texto en pantalla"><strong>Abre el 7 de diciembre 📅 · precio especial para la lista</strong></td>
+<td data-l="Lo que decís">Abre el 7 de diciembre. Y las que estén en la lista van a tener un precio especial.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">43–48</td>
+<td data-l="Toma">Tu cara, señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá LISTA 👇</strong></td>
+<td data-l="Lo que decís">Comentá LISTA y te anoto. Un abrazo.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Portada:</strong> vos sonriendo, "Estoy creando algo 🤫".</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>Para las que son nuevas aquí 💛 Soy Joa: periodista, podcast, y mamá de un bebé que llegó antes de tiempo.<br/>
+Desde que nació, grabo y edito mis videos yo sola, desde el celular, en las siestas.<br/>
+Y como me preguntan tanto cómo lo hago… hice un curso cortito para empezar el año. Abre el 7 de diciembre.<br/>
+Comentá LISTA y te anoto para el precio especial.</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>Los mensajes en pantalla: <strong>solo mensajes reales</strong> de tus mensajes privados o comentarios (para el 2 de diciembre ya habrá suficientes de GRABAR). Si no hay, quitamos la toma y la frase.</li>
+<li>El nombre final del curso.</li>
+<li>Que estés de acuerdo con mencionar aquí el parto prematuro (es parte de tu historia, pero este es un contexto de venta).</li>
+</ul></div></details></article><article id="r-K1"><details><summary><h2 class="pz">K1 · Carrusel: "Todas dicen que necesitás equipo. Yo grabo con una ventana."</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> semana 2 (viernes 4 de diciembre) · <strong>Meta:</strong> que lo guarden y lo manden, y que entren a la lista · <strong>7 imágenes</strong> · <strong>🔑 LISTA</strong><br/> <strong>Fotos:</strong> solo fotos reales tuyas y de tu set. Sin IA y sin fotos de archivo.</p>
+<h2>5 ganchos para la imagen 1 (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Todas te dicen que para grabarte necesitás equipo. Entonces, ¿por qué yo grabo con una ventana?"</li>
+<li>"Soy periodista. Y grabo mis reels sin aro de luz, sin cámara y sin micrófono."</li>
+<li>"Lo que todas te dicen que comprés para grabarte (y lo que yo uso)."</li>
+<li>"No compré nada para empezar a grabarme. Te enseño mi set."</li>
+<li>"Está muy normalizado pensar que primero hay que comprar. Y no."</li>
+</ol>
+<h2>Las imágenes</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Foto</th>
+<th>Título (grande)</th>
+<th>Texto (pequeño)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="#">1</td>
+<td data-l="Foto">Vos junto a la ventana, el celular sobre una pila de libros. Foto abierta y real</td>
+<td data-l="Título (grande)"><strong>Todas te dicen que necesitás equipo.</strong></td>
+<td data-l="Texto (pequeño)">Entonces, ¿por qué yo grabo con una ventana? →</td>
+</tr>
+<tr>
+<td data-l="#">2</td>
+<td data-l="Foto">Un aro de luz (si tenés) o el set vacío sin aro de luz</td>
+<td data-l="Título (grande)"><strong>Dicen: "comprá un aro de luz".</strong></td>
+<td data-l="Texto (pequeño)">Yo hago esto: me paro de frente a la ventana. La luz de la ventana es más suave y no cuesta nada.</td>
+</tr>
+<tr>
+<td data-l="#">3</td>
+<td data-l="Foto">El celular sobre los libros, de cerca</td>
+<td data-l="Título (grande)"><strong>Dicen: "necesitás un trípode".</strong></td>
+<td data-l="Texto (pequeño)">Yo hago esto: tres libros y una caja. Lo único que importa es que el celular quede a la altura de tus ojos.</td>
+</tr>
+<tr>
+<td data-l="#">4</td>
+<td data-l="Foto">Vos grabando en un cuarto con cortinas o sofá</td>
+<td data-l="Título (grande)"><strong>Dicen: "sin micrófono no se oye bien".</strong></td>
+<td data-l="Texto (pequeño)">Yo hago esto: apago el abanico y la tele, y grabo en un cuarto con cortinas o sillones. El celular hace el resto.</td>
+</tr>
+<tr>
+<td data-l="#">5</td>
+<td data-l="Foto">La pantalla del celular en la app de edición (⚠️ tu app)</td>
+<td data-l="Título (grande)"><strong>Dicen: "hay que editar en computadora".</strong></td>
+<td data-l="Texto (pequeño)">Yo edito en el celular. Cinco pasos: cortar, subtítulos, texto, música y exportar.</td>
+</tr>
+<tr>
+<td data-l="#">6</td>
+<td data-l="Foto">Tu cara, mirando al lente</td>
+<td data-l="Título (grande)"><strong>Lo que nadie te dice:</strong></td>
+<td data-l="Texto (pequeño)">El equipo no quita la pena. La pena se quita grabando. Y eso se aprende.</td>
+</tr>
+<tr>
+<td data-l="#">7</td>
+<td data-l="Foto">Tarjeta con la fecha, sobre el color de la marca</td>
+<td data-l="Título (grande)"><strong>Abre el 7 de diciembre.</strong></td>
+<td data-l="Texto (pequeño)">Simple 2027: mi curso para que este año sí te grabés. Comentá LISTA y te aviso primero, con precio especial. 💛</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Para que lo manden:</strong> en la imagen 6, en la esquina: "Mandáselo a la amiga del aro de luz 😅".<br/> <strong>Para que lo guarden:</strong> en la imagen 5, en la esquina: "Guardalo para cuando armés tu set".</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>Todas te dicen lo mismo: aro de luz, trípode, micrófono, computadora. 🙅‍♀️<br/>
+Yo grabo y edito mis reels con una ventana, tres libros y el celular. Y soy periodista.<br/>
+No es que el equipo sea malo. Es que no es lo que te frena.<br/>
+El 7 de diciembre abro mi primer curso para que este año sí te grabés. Comentá LISTA y te aviso primero, con precio especial 💛<br/>
+#grabarconelcelular #crearcontenido #mamáscreadoras</p>
+</blockquote>
+<h2>⚠️ Para confirmar con vos</h2>
+<ul>
+<li>Que de verdad grabás sin aro de luz, sin trípode y sin micrófono externo. Si usás alguno, quitamos esa imagen. No se escribe nada que no sea verdad.</li>
+<li>El nombre de la app de edición, y que editás en el celular y no en la computadora.</li>
+<li>Imagen 2: no se fotografía el aro de luz de otra persona como si fuera tuyo.</li>
+</ul></div></details></article><article id="r-R5"><details><summary><h2 class="pz">R5 · "¡Hoy es el día!"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> 3 (apertura para todas, martes 8 de diciembre en la mañana) · <strong>Meta:</strong> ventas · <strong>Duración:</strong> ~40 s (~100 palabras) · <strong>🔑 CURSO</strong><br/> <strong>Quién graba:</strong> vos. Energía alta, de verdad. Puede empezar con una reacción real (un brinco, una risa).</p>
+<h2>5 ganchos (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Llevo semanas guardando esto… y hoy por fin te lo puedo decir."</li>
+<li>"Hoy es el día. Y estoy nerviosísima."</li>
+<li>"Mi primer curso abrió hace una hora."</li>
+<li>"Si alguna vez te grabaste y lo borraste, esto es para vos."</li>
+<li>"Lo grabé en las siestas de mi bebé. Y hoy sale."</li>
+</ol>
+<h2>Producción</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–4</td>
+<td data-l="Toma">Tu cara, respirás hondo, sonrisa enorme</td>
+<td data-l="Texto en pantalla"><strong>¡HOY ES EL DÍA! 🎉</strong></td>
+<td data-l="Lo que decís">Llevo semanas guardando esto… y hoy por fin te lo puedo decir.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">4–9</td>
+<td data-l="Toma">Acercamiento; enseñás el celular con la página del curso</td>
+<td data-l="Texto en pantalla"><strong>Ya abrió 📱 · Este año sí te grabás</strong></td>
+<td data-l="Lo que decís">Ya abrió Simple 2027: mi curso para que este año sí te grabés.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">9–20</td>
+<td data-l="Toma">4 tarjetas que cambian rápido, sobre tomas de las clases</td>
+<td data-l="Texto en pantalla"><strong>😳 Perderle el miedo · ☀️ Verte natural · 🎙️ Hablar como periodista · ✂️ Editar en el celular</strong></td>
+<td data-l="Lo que decís">Nueve clases cortas: cómo perderle el miedo a la cámara, cómo verte natural, cómo hablarle al lente como periodista… y cómo editar tu reel en el celular, paso a paso.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">20–28</td>
+<td data-l="Toma">Vos junto a la ventana, el celular sobre los libros (el mismo set del R1, para que se sienta la continuidad)</td>
+<td data-l="Texto en pantalla"><strong>Lo grabé con un celular y una ventana</strong></td>
+<td data-l="Lo que decís">Es mi primer curso. Lo grabé en las siestas de mi bebé, con lo mismo que te voy a enseñar a usar: un celular y una ventana.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">28–35</td>
+<td data-l="Toma">Tarjeta con el precio</td>
+<td data-l="Texto en pantalla"><strong>₡18.900 · Lista: ₡13.900 hasta el jueves 10 · SINPE Móvil o tarjeta · Empezamos el 11 de enero</strong></td>
+<td data-l="Lo que decís">Son dieciocho mil novecientos colones. Si estabas en la lista, hasta el jueves es a trece mil novecientos. Lo pagás con SINPE Móvil o con tarjeta. Y el once de enero empezamos juntas un reto de veintiún días.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">35–40</td>
+<td data-l="Toma">Tu cara, señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá CURSO 👇</strong></td>
+<td data-l="Lo que decís">Regalátelo. Comentá CURSO y te mando el link. ¡Te espero adentro!</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Honestidad:</strong> "Es mi primer curso", en lugar de prueba social falsa. Sin números y sin testimonios.<br/> <strong>Portada:</strong> "¡HOY ES EL DÍA! 🎉" en grande, vos sonriendo.</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>¡Hoy es el día! 🎉 Ya abrió Simple 2027, mi primer curso: 9 clases cortas y un reto de 21 días para que este año sí te grabés. Desde el celular, sin miedo y sin equipo caro.<br/>
+₡18.900, y si estás en la lista, ₡13.900 hasta el jueves 10 de diciembre a las 11:59 p.m. Pagás con SINPE Móvil o tarjeta. ¿Fuera de Costa Rica? US$42 (US$30 en la lista), con tarjeta.<br/>
+Empezamos juntas el lunes 11 de enero. Es tu regalo de Año Nuevo, de vos para vos (o para una amiga 💛).<br/>
+¿Querés acompañamiento? Hay 30 cupos VIP Fundadoras con 3 sesiones en vivo conmigo.<br/>
+Comentá CURSO y te mando el link 💛<br/>
+Las inscripciones cierran el domingo 13 de diciembre a las 11:59 p.m.</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>El precio de ₡13.900 es <strong>solo</strong> para la lista (un link de pago aparte que solo les llega a ellas), no para todas. Si se decide darlo a todas, se cambia la frase a "esta semana".</li>
+<li>"nueve clases" = el número final de clases.</li>
+<li>Que ya existan las tomas de las clases (el curso está grabado para el 4 de diciembre). El R5 se graba antes del 4 y se publica el 8.</li>
+<li>El reto de 21 días se menciona solo si el PDF está listo.</li>
+<li>Actualizado a colones y a las fechas de Año Nuevo.</li>
+</ul></div></details></article><article id="r-K2"><details><summary><h2 class="pz">K2 · Carrusel: "Antes de decidir si es para vos, leé esto"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> semana de venta (miércoles 9 de diciembre) · <strong>Meta:</strong> quitar dudas ← ventas · <strong>8 imágenes</strong> · <strong>🔑 CURSO</strong> (y DUDA)<br/> <strong>Por qué preguntas y no testimonios:</strong> es tu primer curso y todavía no hay compradoras. Por eso el carrusel contesta preguntas reales. Si para el 9 de diciembre llegan comentarios reales de quienes vieron la clase gratis, agregamos una imagen con ellos, con permiso escrito y sin nombre completo.</p>
+<h2>5 ganchos para la imagen 1 (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Antes de decidir si este curso es para vos, leé esto."</li>
+<li>"Las 6 preguntas que más me han hecho desde ayer."</li>
+<li>"Si estás dudando, esto te lo contesto yo misma."</li>
+<li>"\"¿Y si me da pena?\" Te contesto eso y cinco cosas más."</li>
+<li>"No lo comprés todavía. Primero leé esto."</li>
+</ol>
+<h2>Las imágenes</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Título (grande)</th>
+<th>Texto (pequeño)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="#">1</td>
+<td data-l="Título (grande)"><strong>Antes de decidir si es para vos, leé esto.</strong></td>
+<td data-l="Texto (pequeño)">Las preguntas que más me han hecho sobre Simple 2027. →</td>
+</tr>
+<tr>
+<td data-l="#">2</td>
+<td data-l="Título (grande)"><strong>"Me da demasiada pena."</strong></td>
+<td data-l="Texto (pequeño)">Para eso es la clase 1. La pena no se quita antes de grabar: se quita grabando. Empezamos con 15 segundos que no tenés que publicar.</td>
+</tr>
+<tr>
+<td data-l="#">3</td>
+<td data-l="Título (grande)"><strong>"No tengo equipo."</strong></td>
+<td data-l="Texto (pequeño)">No lo necesitás. Un celular y una ventana. En la clase 2 armamos tu set con lo que ya hay en tu casa.</td>
+</tr>
+<tr>
+<td data-l="#">4</td>
+<td data-l="Título (grande)"><strong>"No tengo tiempo."</strong></td>
+<td data-l="Texto (pequeño)">Son 9 clases cortas [⚠️ duración total real]. Yo las grabé en las siestas de mi bebé. La clase 9 es justo para eso: grabar con poquito tiempo.</td>
+</tr>
+<tr>
+<td data-l="#">5</td>
+<td data-l="Título (grande)"><strong>"No sé nada de edición."</strong></td>
+<td data-l="Texto (pequeño)">Mejor. Hay tres clases de edición en el celular, paso a paso, con un video mío de verdad. Y una más donde hago un reel completo frente a vos. Editamos en CapCut.</td>
+</tr>
+<tr>
+<td data-l="#">6</td>
+<td data-l="Título (grande)"><strong>"¿Y si lo compro y no lo hago?"</strong></td>
+<td data-l="Texto (pequeño)">Por eso el lunes 11 de enero empezamos juntas un reto de 21 días: una idea de video por día. No lo hacés sola.</td>
+</tr>
+<tr>
+<td data-l="#">7</td>
+<td data-l="Título (grande)"><strong>"¿Cuánto cuesta y cómo pago?"</strong></td>
+<td data-l="Texto (pequeño)">₡18.900, un solo pago, con SINPE Móvil o tarjeta. Si estás en la lista, tu precio es ₡13.900 hasta mañana jueves a las 11:59 p.m. Fuera de Costa Rica: US$42 (US$30 en la lista), con tarjeta.</td>
+</tr>
+<tr>
+<td data-l="#">8</td>
+<td data-l="Título (grande)"><strong>Lo que no te prometo.</strong></td>
+<td data-l="Texto (pequeño)">Seguidores ni ventas. Eso depende de muchas cosas. Lo que sí: vas a saber grabarte, editar y publicar. Comentá CURSO y te mando el link. ¿Otra duda? Escribime DUDA. 💛</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Fotos:</strong> fondo del color de la marca con texto grande. En las imágenes 1 y 8, una foto real tuya.<br/> <strong>Imagen opcional (solo si es real):</strong> entre la 6 y la 7: "Lo que me escribieron después de la clase gratis" + una captura real, con el nombre tapado y permiso escrito.</p>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>Ayer abrió Simple 2027 y me llenaron de preguntas. 💛 Aquí van las que más se repiten, contestadas por mí.<br/>
+Es mi primer curso, así que no tengo cien testimonios que enseñarte. Lo que sí tengo son respuestas honestas.<br/>
+Las inscripciones cierran el domingo 13 de diciembre a las 11:59 p.m. Empezamos juntas el lunes 11 de enero.<br/>
+Comentá CURSO y te mando el link. Si tenés otra duda, escribime DUDA y te leo yo misma.</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li><strong>Las preguntas:</strong> cambiá las que podás por preguntas que de verdad te hicieron (en los en vivos, en comentarios, en respuestas al correo). Si una pregunta de la lista no te la hicieron, la frase "las que más me han hecho" no es verdad para esa, y la cambiamos.</li>
+<li>La duración real del curso, y que el archivo del reto esté listo. (La app: CapCut.)</li>
+<li>La garantía de 7 días ya se decidió: se agrega una imagen "¿Y si no me gusta?".</li>
+</ul></div></details></article><article id="r-R6"><details><summary><h2 class="pz">R6 · Viernes 11 de diciembre: "Adentro del curso" (la versión normal) o "La reacción de…" (solo si es real)</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> semana de venta, después de que termina el precio de lista · <strong>Meta:</strong> ventas al precio normal · <strong>🔑 CURSO</strong><br/> Hay dos versiones. La A se graba siempre. La B se graba solo si el momento pasó de verdad y vos querés compartirlo.</p>
+<hr/>
+<h2>Versión A (la normal) · "Te enseño un pedacito de la clase 5"</h2>
+<p><strong>Duración:</strong> ~30 s (~75 palabras) · <strong>Quién graba:</strong> vos, más una grabación de pantalla real de la clase 5.</p>
+<h3>5 ganchos (el elegido es el 1)</h3>
+<ol>
+<li>✅ "Este video duraba un minuto y medio. Mirá lo que le quité."</li>
+<li>"Te enseño un pedacito de la clase 5, la de editar."</li>
+<li>"Editar un reel son cinco pasos. Este es el primero."</li>
+<li>"Si dudás si cortarlo, cortalo."</li>
+<li>"Así se ve por dentro mi curso."</li>
+</ol>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–4</td>
+<td data-l="Toma">Grabación de pantalla: una línea de tiempo larga en la app</td>
+<td data-l="Texto en pantalla"><strong>1:30 → ? ✂️</strong></td>
+<td data-l="Lo que decís">Este video duraba un minuto y medio. Mirá lo que le quité.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">4–14</td>
+<td data-l="Toma">Grabación de pantalla acelerada: se corta el inicio, los silencios y las repeticiones</td>
+<td data-l="Texto en pantalla"><strong>Cortá el principio · los silencios · lo que repetiste</strong></td>
+<td data-l="Lo que decís">Le corto el principio, cuando me acomodo. Los silencios largos. Y las frases que repetí: dejo la que salió mejor.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">14–19</td>
+<td data-l="Toma">La línea de tiempo ya corta, con tu cara en una esquina</td>
+<td data-l="Texto en pantalla"><strong>Si dudás, cortalo</strong></td>
+<td data-l="Lo que decís">La regla es una: si dudás si cortarlo, cortalo.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">19–25</td>
+<td data-l="Toma">Tu cara, de cerca</td>
+<td data-l="Texto en pantalla"><strong>Esto es la clase 5 de 9</strong></td>
+<td data-l="Lo que decís">Esto es un pedacito de la clase 5 de mi curso. Son nueve, cortas, y todo se hace en el celular.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">25–30</td>
+<td data-l="Toma">Tarjeta con la fecha, y después tu cara</td>
+<td data-l="Texto en pantalla"><strong>Cierra el domingo 13 · Comentá CURSO 👇</strong></td>
+<td data-l="Lo que decís">Las inscripciones cierran el domingo. Comentá CURSO y te mando el link.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Texto de la publicación:</strong></p>
+<blockquote>
+<p>Lo más importante de editar no es agregar: es quitar. ✂️<br/>
+Esto es un pedacito de la clase 5 de Simple 2027. Nueve clases cortas y un reto de 21 días para que este año sí te grabés.<br/>
+Cierra el domingo 13 de diciembre a las 11:59 p.m. Comentá CURSO y te mando el link 💛</p>
+</blockquote>
+<p><strong>⚠️ Para confirmar:</strong> cuánto duraba el video original que se editó (si no es 1:30, cambiamos el número en el gancho y en el texto), y que sea la grabación real de la clase.</p>
+<p></p>
+<hr/>
+<h2>Versión B (opcional) · "La reacción de [persona] cuando le dije…"</h2>
+<p>⛔ <strong>Se graba solo si se cumplen las tres cosas:</strong> el momento pasó de verdad · la persona acepta por escrito salir · el bebé no sale.<br/> No hay guion palabra por palabra, porque una reacción actuada es una prueba falsa. Solo hay una estructura:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Qué pasa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Parte">0–3</td>
+<td data-l="Qué pasa">Texto en pantalla: <strong>"Le dije a [mi esposo / mi mamá] que [dato REAL] y…"</strong>. Vos tenés el celular y grabás a la persona</td>
+</tr>
+<tr>
+<td data-l="Parte">3–15</td>
+<td data-l="Qué pasa">La reacción real, sin cortes que cambien el sentido</td>
+</tr>
+<tr>
+<td data-l="Parte">15–25</td>
+<td data-l="Qué pasa">Vos al lente: qué significa para vos, con tus palabras</td>
+</tr>
+<tr>
+<td data-l="Parte">25–30</td>
+<td data-l="Qué pasa"><strong>"Cierra el domingo 13 · Comentá CURSO"</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Qué puede ser el "dato REAL":</strong> "abrí mi primer curso", "ya entraron las primeras", o un número <strong>real</strong> de inscritas, contado ese mismo día.<br/> <strong>Qué no:</strong> un monto de ingresos, un número redondeado hacia arriba, o una reacción grabada otra vez porque la primera «no salió bien».</p></div></details></article><article id="r-R7"><details><summary><h2 class="pz">R7 · "Últimas horas"</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Grabado</label></div><div class="cuerpo"><p><strong>Etapa:</strong> el día del cierre (domingo 13 de diciembre, en la tarde) · <strong>Meta:</strong> las últimas ventas · <strong>Duración:</strong> ~20 s (~50 palabras) · <strong>🔑 CURSO</strong><br/> <strong>Quién graba:</strong> vos, una sola toma, sin producción. Como una historia.</p>
+<h2>5 ganchos (el elegido es el 1)</h2>
+<ol>
+<li>✅ "Hoy a medianoche cierro las inscripciones. Y te quiero decir por qué."</li>
+<li>"Últimas horas. Después de hoy, se cierra."</li>
+<li>"Si lo estabas pensando, hoy es el último día."</li>
+<li>"No lo cierro por presión. Lo cierro por esto."</li>
+<li>"El 11 de enero empezamos. Hoy es el último día para entrar."</li>
+</ol>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Toma</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–4</td>
+<td data-l="Toma">Tu cara, de cerca, tranquila</td>
+<td data-l="Texto en pantalla"><strong>Hoy cierra · 11:59 p.m. ⏰</strong></td>
+<td data-l="Lo que decís">Hoy a medianoche cierro las inscripciones. Y te quiero decir por qué.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">4–12</td>
+<td data-l="Toma">La misma toma, con un acercamiento leve</td>
+<td data-l="Texto en pantalla"><strong>Empezamos juntas el 11 de enero</strong></td>
+<td data-l="Lo que decís">Porque el once de enero empezamos el reto todas juntas. Y quiero saber quiénes somos para acompañarlas bien.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">12–17</td>
+<td data-l="Toma">Tu cara</td>
+<td data-l="Texto en pantalla"><strong>Este año sí te grabás</strong></td>
+<td data-l="Lo que decís">Si llevás días pensándolo, esta es tu señal. Que este sea el año.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">17–20</td>
+<td data-l="Toma">Señalando hacia abajo</td>
+<td data-l="Texto en pantalla"><strong>Comentá CURSO 👇</strong></td>
+<td data-l="Lo que decís">Comentá CURSO y te mando el link. Un abrazo.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>Hoy, domingo 13 de diciembre, a las 11:59 p.m. cierran las inscripciones de Simple 2027. ⏰<br/>
+Cierro porque el lunes 11 de enero empezamos juntas, y quiero acompañar bien a las que entren.<br/>
+Comentá CURSO y te mando el link. Te espero adentro 💛</p>
+</blockquote>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>Que el cierre sea real: el 13 de diciembre a las 11:59 p.m. se cierran los links de pago y la palabra CURSO. Si se decide dejarlo abierto, este reel no se publica.</li>
+</ul></div></details></article><h2 class="sec" id="s6">6 · Lo nuevo</h2><p class="lead">Tres cosas que se agregaron el 20 de noviembre: llevar los reels a tus otros canales, un sorteo de cinco cupos, y un grupo pequeño de mujeres que prueban las primeras clases y nos dan testimonios reales.</p><article id="r-X1"><details><summary><h2 class="pz">X1 · Otros canales: TikTok, YouTube, podcast y Facebook</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> semanas 1 y 2 (23 de noviembre al 6 de diciembre) · <strong>Meta:</strong> que la lista crezca más allá de Instagram · <strong>🔑 Sin palabra clave: el link del perfil</strong><br/> <strong>Por qué:</strong> el plan era solo Instagram. Tenés más público que no ve los reels: TikTok, YouTube, el podcast y el grupo de Facebook.<br/> <strong>Por qué link y no GRABAR:</strong> el mensaje automático solo funciona en Instagram. En los otros canales mandamos al link de la página de la clase gratis.</p>
+<h2>1. TikTok y YouTube Shorts: los mismos reels, con otro final</h2>
+<p>R1, R2 y R3 se publican el mismo día también en TikTok y en YouTube Shorts. El video es igual, menos los últimos cinco segundos.</p>
+<p><strong>Final alterno para grabar (una vez por reel, justo después del final normal):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Reel</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Reel">R1</td>
+<td data-l="Texto en pantalla"><strong>Clase gratis 👉 link en mi perfil</strong></td>
+<td data-l="Lo que decís">Si te da pena grabarte, te hice una clase gratis de 5 minutos. El link está en mi perfil.</td>
+</tr>
+<tr>
+<td data-l="Reel">R2</td>
+<td data-l="Texto en pantalla"><strong>Clase gratis 👉 link en mi perfil</strong></td>
+<td data-l="Lo que decís">Te enseño a hacerlo con lo que ya tenés, en una clase gratis de 5 minutos. El link está en mi perfil.</td>
+</tr>
+<tr>
+<td data-l="Reel">R3</td>
+<td data-l="Texto en pantalla"><strong>Clase gratis 👉 link en mi perfil</strong></td>
+<td data-l="Lo que decís">Si querés el truco completo, está en mi clase gratis de 5 minutos. El link está en mi perfil.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Si el día de grabación 1 ya pasó sin el final alterno:</strong> el reel se sube tal cual, y se fija este primer comentario:</p>
+<blockquote>
+<p>La clase gratis está en el link de mi perfil 💛</p>
+</blockquote>
+<p><strong>Textos para TikTok:</strong></p>
+<blockquote>
+<p><strong>R1:</strong> No tengo aro de luz ni cámara. Tengo un bebé chiquito y un celular 📱 Así grabo y edito. Clase gratis de 5 minutos en el link de mi perfil 💛 #crearcontenido #grabarconelcelular #mamáscreadoras #costarica</p>
+<p><strong>R2:</strong> No necesitás todo esto para empezar a grabarte. Una ventana y tu celular. Clase gratis en el link de mi perfil 💛 #crearcontenido #grabarconelcelular #costarica</p>
+<p><strong>R3:</strong> Lo que aprendí entrevistando gente frente a cámara, para que no te veás leyendo. Clase gratis en el link de mi perfil 💛 #hablarencámara #crearcontenido #costarica</p>
+</blockquote>
+<p><strong>Títulos para YouTube Shorts (máximo 60 caracteres):</strong></p>
+<ul>
+<li>R1: <code>Así grabo y edito con un bebé y solo el celular</code></li>
+<li>R2: <code>No necesitás todo esto para grabarte</code></li>
+<li>R3: <code>El truco de periodista para hablarle a la cámara</code></li>
+</ul>
+<p>En la descripción de cada Short, primera línea: <code>Clase gratis de 5 minutos: [link de la página de la clase gratis]</code></p>
+<h2>2. El podcast: medio minuto al inicio del episodio</h2>
+<p>En cada episodio que salga entre el 23 de noviembre y el 6 de diciembre, justo después de la entrada:</p>
+<blockquote>
+<p>Antes de empezar, les cuento algo rápido. Hice una clase gratis de cinco minutos para las que quieren grabarse y les da pena: cómo grabarte con el celular y verte natural. El link está en la descripción de este episodio. Es gratis. Ahora sí, empecemos.</p>
+</blockquote>
+<p>En la descripción del episodio, primera línea: <code>Clase gratis: cómo grabarte con el celular y verte natural → [link]</code></p>
+<p>En un episodio que salga después del 2 de diciembre, agregás una frase:</p>
+<blockquote>
+<p>Y el 7 de diciembre abro mi primer curso. Las que están en la lista entran primero y con mejor precio.</p>
+</blockquote>
+<h2>3. El grupo de Facebook Mamacitas CR</h2>
+<p><strong>Publicación 1 · martes 24 de noviembre</strong> (con una foto real tuya grabando, sin el bebé):</p>
+<blockquote>
+<p>Mamacitas 💛 Hoy les cuento algo que no tiene que ver con pañales.<br/> Desde que nació mi bebé grabo y edito mis videos yo sola, desde el celular, en las siestas. Y sé que a muchas les da pena grabarse, aunque lo necesiten para su emprendimiento.<br/> Les hice una clase gratis de 5 minutos: la luz, la altura del celular y cómo hablarle a la cámara sin verse rara.<br/> Aquí está: [link]<br/> Si la ven, cuéntenme cómo les fue 🫶</p>
+</blockquote>
+<p><strong>Publicación 2 · miércoles 2 de diciembre</strong> (después del R4):</p>
+<blockquote>
+<p>Mamacitas, ya puedo contarles 🤫 El 7 de diciembre abro mi primer curso: grabarte y editar desde el celular, en clases cortas, pensado para las que tenemos poquito tiempo.<br/> Las que están en la lista entran un día antes y con precio especial. Para entrar a la lista: [link]</p>
+</blockquote>
+<h2>Cómo sabemos de qué canal llegó cada una</h2>
+<p>Un link distinto para cada canal, a la misma página. Así vemos qué canal vale la pena. Los cuatro links te los pasamos cuando la página esté lista.</p>
+<h2>⚠️ Para confirmar antes de publicar</h2>
+<ul>
+<li>Que el link de la página de la clase gratis esté en tu perfil de TikTok, en tu canal de YouTube y en tu página de links.</li>
+<li>"a muchas les da pena grabarse" se queda. Frases como "muchas me escriben" entran solo si son verdad.</li>
+<li>Que las reglas del grupo de Facebook permitan una publicación así. Si no sos la administradora, hay que pedirle permiso a ella.</li>
+<li>No se ha comprobado si el mensaje automático funciona en TikTok con tu cuenta. Por eso el plan no depende de eso.</li>
+<li>El video se sube a TikTok y a YouTube sin la marca de agua de Instagram: se sube el archivo original, no uno descargado de Instagram.</li>
+</ul></div></details></article><article id="r-X2"><details><summary><h2 class="pz">X2 · Sorteo: 5 cupos del curso</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> del 3 al 6 de diciembre, después del anuncio del curso (R4) · <strong>Meta:</strong> comentarios, etiquetas y más personas en la lista antes de abrir · <strong>🔑 LISTA</strong><br/> <strong>Por qué:</strong> en tu cuenta, las publicaciones con más comentarios son los sorteos. El premio es el curso mismo, así que participa quien lo quiere.<br/> <strong>Por qué no antes del 2 de diciembre:</strong> el curso se anuncia en el R4. Un sorteo antes lo revelaría antes de tiempo.<br/> <strong>Por qué se sortea el 6:</strong> quien espera un resultado no compra. Por eso las ganadoras se eligen un día antes de abrir, en el en vivo 3.</p>
+<h2>Calendario</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Cuándo</th>
+<th>Qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Cuándo">Jueves 3 de diciembre, en la mañana</td>
+<td data-l="Qué">Se publica el sorteo (un reel corto en selfie, o una foto)</td>
+</tr>
+<tr>
+<td data-l="Cuándo">Jueves 3 de diciembre, en el en vivo 2</td>
+<td data-l="Qué">Mencionás el sorteo y explicás cómo participar</td>
+</tr>
+<tr>
+<td data-l="Cuándo">Viernes 4 y sábado 5 de diciembre</td>
+<td data-l="Qué">Una historia de recordatorio por día</td>
+</tr>
+<tr>
+<td data-l="Cuándo">Domingo 6 de diciembre, 6:00 p.m.</td>
+<td data-l="Qué">Cierra el sorteo</td>
+</tr>
+<tr>
+<td data-l="Cuándo">Domingo 6 de diciembre, en el en vivo 3</td>
+<td data-l="Qué">Elegís a las cinco ganadoras en vivo, y les avisás por mensaje privado</td>
+</tr>
+</tbody>
+</table></div>
+<h2>La publicación (reel en selfie, 15–20 segundos)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tiempo</th>
+<th>Texto en pantalla</th>
+<th>Lo que decís</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Tiempo">0–3</td>
+<td data-l="Texto en pantalla"><strong>🎁 Sorteo: 5 cupos de mi curso</strong></td>
+<td data-l="Lo que decís">¡Sorteo! Voy a regalar cinco cupos de mi curso nuevo.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">3–10</td>
+<td data-l="Texto en pantalla"><strong>Grabate y editá desde el celular</strong></td>
+<td data-l="Lo que decís">Es el curso que abre el 7 de diciembre: nueve clases cortas para grabarte y editar desde el celular.</td>
+</tr>
+<tr>
+<td data-l="Tiempo">10–18</td>
+<td data-l="Texto en pantalla"><strong>Comentá LISTA + etiquetá a una amiga</strong></td>
+<td data-l="Lo que decís">Para participar: comentá LISTA y etiquetá a una amiga que también quiere empezar a grabarse. El domingo, en el en vivo, digo quiénes ganaron.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Texto de la publicación</h2>
+<blockquote>
+<p>🎁 SORTEO · 5 cupos del Paquete Simple 2027<br/>
+Mi primer curso abre el 7 de diciembre, y quiero regalar cinco cupos antes de abrir.<br/>
+Para participar:<br/>
+1. Seguime en @johannavillam<br/>
+2. Comentá LISTA<br/>
+3. Etiquetá a una amiga que también quiere empezar a grabarse (cada comentario con una amiga distinta cuenta)<br/>
+Cierra el domingo 6 de diciembre a las 6:00 p.m. Ese día, en el en vivo, elegimos a las cinco al azar.<br/>
+Solo escribo a las ganadoras desde esta cuenta. Nunca pido dinero ni datos de tarjeta.<br/>
+Reglamento en el link de mi perfil. Esta promoción no está patrocinada, avalada ni administrada por Instagram.</p>
+</blockquote>
+<h2>Historia de recordatorio</h2>
+<blockquote>
+<p>🎁 Sigue abierto el sorteo de 5 cupos. Comentá LISTA en el último post. Cierra el domingo a las 6.</p>
+</blockquote>
+<h2>El reglamento (una página corta, con link desde el perfil)</h2>
+<blockquote>
+<p><strong>Reglamento · Sorteo de 5 cupos del Paquete Simple 2027</strong><br/>
+<strong>Organiza:</strong> [⚠️ nombre legal de quien vende, según lo que diga el contador]<br/>
+<strong>Quién participa:</strong> personas mayores de 18 años.<br/>
+<strong>Cuándo:</strong> del jueves 3 de diciembre al domingo 6 de diciembre de 2026, 6:00 p.m., hora de Costa Rica.<br/>
+<strong>Cómo:</strong> seguir a @johannavillam, comentar LISTA en la publicación del sorteo y etiquetar a una persona. Cada comentario con una persona distinta es una participación.<br/>
+<strong>Premio:</strong> cinco accesos al Paquete Simple 2027 (uno por ganadora). No se cambia por dinero. La ganadora puede regalárselo a otra persona.<br/>
+<strong>Cómo se elige:</strong> al azar, entre los comentarios válidos, durante el en vivo del domingo 6 de diciembre.<br/>
+<strong>Cómo avisamos:</strong> por mensaje privado, solo desde @johannavillam. Nunca pedimos dinero, tarjeta ni contraseñas. Si en 48 horas la ganadora no responde, se elige a otra.<br/>
+<strong>Datos:</strong> usamos el nombre de usuario de las ganadoras solo para anunciarlas.<br/>
+Esta promoción no está patrocinada, avalada ni administrada por Instagram ni asociada a Instagram.</p>
+</blockquote>
+<h2>Qué pasa después</h2>
+<ul>
+<li>Las cinco ganadoras reciben su acceso el 7 de diciembre, junto con la lista.</li>
+<li>La que no ganó ya está en la lista (si se inscribió con el mensaje de LISTA), y recibe el precio de lista el 7 de diciembre.</li>
+<li>Historia después del en vivo: <code>Felicidades a las cinco 💛 Y para todas las demás: mañana abre para la lista.</code></li>
+</ul>
+<h2>⚠️ Para confirmar antes de publicar</h2>
+<ul>
+<li><strong>Legal:</strong> todavía no sabemos qué pide la ley de Costa Rica para un sorteo en redes (reglamento, registro, impuestos sobre el premio). Es una pregunta para el contador o un abogado. Sin esa respuesta, el sorteo no se publica.</li>
+<li><strong>Reglas de Instagram:</strong> la frase sobre Instagram al final del texto se queda. Falta revisar la redacción actual de las reglas de promociones de Instagram.</li>
+<li><strong>Cómo se elige:</strong> con una herramienta de sorteo de comentarios, o contando a mano y con un número al azar en vivo. Falta escoger la herramienta.</li>
+<li><strong>Cuentas falsas:</strong> en los sorteos aparecen cuentas falsas que les escriben a las participantes. Por eso la frase "Solo escribo desde esta cuenta" tiene que quedarse.</li>
+<li>Que el mensaje automático esté listo: cuando comentan LISTA, les llega el link de inscripción (ya está en el plan, desde el 2 de diciembre).</li>
+</ul></div></details></article><article id="r-X3"><details><summary><h2 class="pz">X3 · Probadoras: testimonios reales antes de abrir</h2></summary><div class="est"><label><input data-k="est0" type="checkbox"/>Lo leí</label><label><input data-k="est1" type="checkbox"/>Confirmé lo marcado con ⚠️</label><label><input data-k="est2" type="checkbox"/>Hecho</label></div><div class="cuerpo"><p><strong>Etapa:</strong> del 24 de noviembre al 6 de diciembre · <strong>Meta:</strong> de 5 a 10 testimonios reales en la página de venta el día que abre · <strong>🔑 Sin palabra clave: invitación personal</strong><br/> <strong>Por qué:</strong> es tu primer curso y no hay ni un testimonio. Sin eso, la página de venta se apoya solo en tu palabra.<br/> <strong>Cómo:</strong> de 10 a 15 mujeres de tu público real ven las primeras clases antes que nadie, y escriben lo que de verdad les pasó.</p>
+<h2>Calendario</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Cuándo</th>
+<th>Qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-l="Cuándo">24–27.11</td>
+<td data-l="Qué">Escogés de 10 a 15 mujeres y les mandás la invitación</td>
+</tr>
+<tr>
+<td data-l="Cuándo">1.12</td>
+<td data-l="Qué">Reciben las clases 1 a 4 (links privados)</td>
+</tr>
+<tr>
+<td data-l="Cuándo">Antes del 5 de diciembre</td>
+<td data-l="Qué">Mandan: un video de antes y después, y tres respuestas cortas</td>
+</tr>
+<tr>
+<td data-l="Cuándo">6.12</td>
+<td data-l="Qué">Ponemos en la página de venta solo lo que llegó, con permiso escrito</td>
+</tr>
+<tr>
+<td data-l="Cuándo">7.12</td>
+<td data-l="Qué">Reciben el curso completo de regalo</td>
+</tr>
+</tbody>
+</table></div>
+<h2>A quién escoger</h2>
+<ul>
+<li>Las que mandaron el ejercicio de 15 segundos después de la clase gratis.</li>
+<li>Las que contestaron la caja de preguntas "¿Qué te frena a grabarte?".</li>
+<li>Mamás del grupo de Facebook.</li>
+<li>Ni familia ni amigas cercanas. Si alguna sí es amiga, se dice al lado de su testimonio.</li>
+</ul>
+<h2>La invitación (mensaje privado tuyo)</h2>
+<blockquote>
+<p>Hola [nombre] 💛 Te escribo yo, Joa.<br/>
+Estoy terminando mi primer curso: grabarte y editar desde el celular. Antes de abrirlo quiero que unas pocas mujeres lo prueben y me digan la verdad.<br/>
+¿Te gustaría ser una? Te mando las primeras cuatro clases el 1 de diciembre. Son cortas, como media hora en total.<br/>
+A cambio te pido dos cosas, antes del 5 de diciembre: un video tuyo de 15 segundos antes de las clases y otro después, y que me contestés tres preguntas.<br/>
+Y el 7 de diciembre te regalo el curso completo, digas lo que digas. Si no te gustó, también quiero saberlo.</p>
+</blockquote>
+<h2>Cuando te dice que sí</h2>
+<blockquote>
+<p>¡Qué alegría! Antes de ver las clases, grabate 15 segundos contándome por qué querés aprender a grabarte. No lo borrés: ese es tu "antes".<br/>
+El 1 de diciembre te llegan las clases por aquí.</p>
+</blockquote>
+<h2>El 1 de diciembre, con las clases</h2>
+<blockquote>
+<p>Aquí están tus cuatro clases 💛 [links]<br/> Cuando las terminés, grabate otros 15 segundos con lo que aprendiste. Ese es tu "después".<br/> Y contame:<br/> 1. ¿Qué te daba pena o te frenaba antes?<br/> 2. ¿Qué cambió después de las clases?<br/> 3. ¿A quién se lo recomendarías?</p>
+</blockquote>
+<h2>El permiso para publicar (ella contesta por escrito)</h2>
+<blockquote>
+<p>¿Me das permiso de compartir tu respuesta y tus videos en mi página y en mis redes? Decime cuál preferís:<br/>
+A. Sí, con mi nombre y mi usuario.<br/>
+B. Sí, solo con mi primer nombre.<br/>
+C. Solo mis palabras, sin video.<br/>
+D. Prefiero que no.</p>
+</blockquote>
+<h2>Cómo se ve en la página de venta</h2>
+<blockquote>
+<p><strong>Ellas lo probaron antes que nadie</strong><br/>
+Vieron las primeras clases antes de que abriera, y después les regalé el curso. Lo que dicen es suyo, tal cual me lo escribieron.</p>
+</blockquote>
+<p>Debajo: el nombre (según lo que ella escogió), su frase, y el video de antes y después si dio permiso.</p>
+<h2>Reglas</h2>
+<ul>
+<li>Se publica solo lo que ella escribió, y solo con la opción que escogió. Se acorta, no se reescribe.</li>
+<li>Una crítica negativa no se publica y tampoco se bota: con ella se corrige la clase.</li>
+<li>Menos de tres testimonios con permiso: la sección se quita de la página. No se rellena.</li>
+<li>Se guarda una captura de cada permiso, con la fecha.</li>
+<li>La frase "después les regalé el curso" se queda en la página. Si alguien recibió algo a cambio, se dice.</li>
+</ul>
+<h2>⚠️ Para confirmar</h2>
+<ul>
+<li>Que las clases 1 a 4 estén editadas para el 1 de diciembre. Si no, las probadoras reciben solo la clase gratis y la clase 1, y el testimonio habla solo de esas.</li>
+<li>"como media hora en total": se ajusta a la duración real de las cuatro clases editadas.</li>
+</ul></div></details></article><p class="nota">Tus marcas se guardan solo en este navegador. Si abrís la guía en otro celular o borrás los datos del navegador, empiezan de cero.</p><script>
+(function(){
+  var K='joa-guia:';function h(s){var x=0;for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))|0}return(x>>>0).toString(36)}
+  function get(k){try{return localStorage.getItem(K+k)}catch(e){return null}}
+  function set(k,v){try{v?localStorage.setItem(K+k,'1'):localStorage.removeItem(K+k)}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('input[type=checkbox]'));
+  function pinta(){
+    var n=boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('pn').textContent=n+' de '+boxes.length;
+    document.getElementById('pb').style.width=(boxes.length?100*n/boxes.length:0)+'%';
+    boxes.forEach(function(b){var tr=b.closest('tr');if(tr)tr.classList.toggle('ok',b.checked)});
+    [].forEach.call(document.querySelectorAll('article'),function(a){var e=a.querySelectorAll('.est input');a.classList.toggle('hecho',e.length&&[].every.call(e,function(x){return x.checked}))});
+  }
+  boxes.forEach(function(b){
+    var ctx=b.closest('article');var base=b.dataset.k||(b.closest('tr')||b.parentNode).textContent.trim();
+    b._k=h((ctx?ctx.id:'')+'|'+base); b.checked=!!get(b._k);
+    b.addEventListener('change',function(){set(b._k,b.checked);pinta()});
+  });
+  [].forEach.call(document.querySelectorAll('.chk tr'),function(tr){tr.addEventListener('click',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='A')return;var b=tr.querySelector('input');if(b){b.checked=!b.checked;b.dispatchEvent(new Event('change'))}})});
+  [].forEach.call(document.querySelectorAll('a.ir'),function(a){a.addEventListener('click',function(){var d=document.querySelector(a.getAttribute('href')+' details');if(d)d.open=true})});
+  if(location.hash){var d=document.querySelector(location.hash+' details');if(d)d.open=true}
+  pinta();
+})();
+</script></body></html>
